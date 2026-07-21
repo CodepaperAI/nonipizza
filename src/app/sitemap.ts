@@ -11,7 +11,10 @@ const routes = [
   "/pizza-near-me-woodstock",
   "/order-pizza-online-woodstock",
   "/pizza-delivery-woodstock",
+  "/best-pizza-woodstock",
   "/indian-fusion-pizza-woodstock",
+  "/dine-in-pizza-woodstock",
+  "/pizza-delivery-woodstock-vs-chains",
   "/chicken-wings-woodstock",
   "/shawarma-woodstock",
 ];

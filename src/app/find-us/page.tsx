@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Faq } from "@/components/Faq";
 import { OrderCTA } from "@/components/OrderCTA";
@@ -102,6 +103,17 @@ export default function Page() {
                   <li key={s}>{s}</li>
                 ))}
               </ul>
+              <p className="mt-3 text-sm">
+                Prefer to eat in? See{" "}
+                <Link href="/dine-in-pizza-woodstock" className="font-bold text-orange underline">
+                  dine-in pizza in Woodstock
+                </Link>
+                , or{" "}
+                <Link href="/order-pizza-online-woodstock" className="font-bold text-orange underline">
+                  order pizza online
+                </Link>
+                .
+              </p>
             </InfoCard>
           </div>
 

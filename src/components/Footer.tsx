@@ -12,7 +12,10 @@ const quickLinks = [
   { label: "Pizza Near Me", href: "/pizza-near-me-woodstock" },
   { label: "Order Online", href: "/order-pizza-online-woodstock" },
   { label: "Pizza Delivery", href: "/pizza-delivery-woodstock" },
+  { label: "Best Pizza", href: "/best-pizza-woodstock" },
   { label: "Indian Fusion Pizza", href: "/indian-fusion-pizza-woodstock" },
+  { label: "Dine-In Pizza", href: "/dine-in-pizza-woodstock" },
+  { label: "Local vs. Chains", href: "/pizza-delivery-woodstock-vs-chains" },
   { label: "Chicken Wings", href: "/chicken-wings-woodstock" },
   { label: "Shawarma", href: "/shawarma-woodstock" },
 ];

@@ -5,6 +5,27 @@
 
 ---
 
+## Entry 2 — Search layer (SEO/AEO/GEO) — 2026-07-22
+
+- Added **§7a Search Strategy** to CLAUDE.md: SEO/AEO/GEO definitions, permanent **Rule 0**
+  (never build competitor-branded pages), keyword→page cluster map, per-page template, and
+  AEO/GEO checklists.
+- Built the **7-page cluster** on a shared template (direct-answer block → order CTA + phone
+  → intro/entity → Why Noni's → price `<table>` → HowTo steps → facts table → FAQ →
+  internal links → map/NAP → "Last updated" stamp): upgraded `/pizza-near-me-woodstock`,
+  `/pizza-delivery-woodstock`, `/order-pizza-online-woodstock`, `/indian-fusion-pizza-woodstock`
+  (strongest — absorbs "Indian Domino's" intent); added new `/best-pizza-woodstock`,
+  `/dine-in-pizza-woodstock`, `/pizza-delivery-woodstock-vs-chains` (honest, no-impersonation
+  comparison table for chain intent).
+- New components: `WhyNoni`, `PriceTable`, `HowToOrder`, `FactsBlock`, `InternalLinks`,
+  `NapMap`; `howToJsonLd` builder; `lib/cluster.ts` (siblings + LAST_UPDATED). Each page emits
+  BreadcrumbList + FAQPage + HowTo JSON-LD; sitemap + footer + find-us cross-linked.
+- Build: 19/19 static; clean-build production smoke test — all routes 200 with schema + tables
+  verified. (A corrupt `.next` from orphaned dev servers caused transient 500s; fixed by a
+  clean rebuild.) No competitor slugs in sitemap.
+
+---
+
 ## Entry 1 — full v1 build — 2026-07-21
 
 - Scaffolded Next.js 14 (App Router) + TypeScript + Tailwind manually (no interactive CLI);

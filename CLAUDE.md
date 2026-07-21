@@ -213,6 +213,104 @@ what makes Noni's different) — **no keyword stuffing, no thin doorway pages.**
 
 ---
 
+## 7a. Search Strategy (SEO / AEO / GEO)
+
+We optimize for **three surfaces at once**:
+
+- **SEO** — classic Google organic + the local pack.
+- **AEO** (Answer Engine Optimization) — featured snippets, People Also Ask, voice: content
+  that answers the question in the **first 40–60 words**.
+- **GEO** (Generative Engine Optimization) — AI answers (Google AI Overviews, ChatGPT,
+  Perplexity, Gemini): clear, quotable, factual, entity-consistent copy + structured data an
+  LLM can lift verbatim.
+
+### Rule 0 — DO NOT target competitor brands directly (permanent)
+
+The raw keyword list contains branded terms ("pizza hut …", "domino's …", "Indian Domino's
+Pizza"). **Never create a page titled after, or claiming to be, Pizza Hut / Domino's / any
+chain.** That is trademark misuse, gets filtered by Google as doorway spam, and cannot rank
+for brand-navigational queries anyway. **Future sessions: do not "helpfully" add competitor
+pages.** Instead:
+
+1. **Capture the generic intent** behind branded queries (user wants pizza delivered near
+   them → route to the delivery page).
+2. **One honest comparison page** — [`/pizza-delivery-woodstock-vs-chains`] — helps users
+   choose between chains and a local option. Factual, respectful, **no impersonation, no
+   logos**; describe chains generically; only make verifiable claims about Noni's.
+3. **"Indian Domino's Pizza" → the goldmine.** Someone wanting Indian-style pizza with a
+   big-brand experience → point at [`/indian-fusion-pizza-woodstock`] (butter chicken,
+   tandoori paneer, spicy chicken). This is Noni's real differentiator — **strongest page on
+   the site.**
+
+### Cluster: keyword → page map (one page owns each intent; siblings cross-link)
+
+Consolidated to avoid keyword cannibalization. **Do not create duplicates of these.**
+
+| Page | Primary keyword | Variants captured |
+| --- | --- | --- |
+| `/pizza-near-me-woodstock` | pizza near me | pizza places/restaurants/shops near me · close to me · pizza from near me · pizza near to me · pizza and delivery near me |
+| `/pizza-delivery-woodstock` | pizza delivery near me | pizza that delivers to me · pizza close to me that delivers · takeaway/food delivery near me pizza · delivery near me delivery |
+| `/order-pizza-online-woodstock` | order pizza online near me | order pizza near me online · online pizza order near me |
+| `/best-pizza-woodstock` | best pizza near me | good pizza near me · pizza near me best |
+| `/indian-fusion-pizza-woodstock` | Indian fusion pizza Woodstock | butter chicken pizza · tandoori paneer pizza · Indian pizza near me · **"Indian Domino's Pizza"** intent |
+| `/dine-in-pizza-woodstock` | dine in pizza restaurants near me | dine-in pizza Woodstock |
+| `/pizza-delivery-woodstock-vs-chains` | *(intent behind)* pizza hut / domino's near me / delivers / closest | reframed → local delivery + neutral comparison |
+
+Existing `/`, `/menu`, `/deals`, `/chicken-wings-woodstock`, `/shawarma-woodstock`,
+`/find-us`, `/reviews` stay and cross-link into this cluster.
+
+### Per-page template (apply to every cluster landing page, in this order)
+
+1. **H1** — primary keyword used naturally + "Woodstock, ON" + brand. One H1 only.
+2. **Direct-answer block (AEO)** — a 40–60 word paragraph immediately under H1 that fully
+   answers the query. This is what answer engines / AI Overviews quote. (Implemented as the
+   `PageHero` lead so it's the first prose under the H1.)
+3. **Order CTA** — filled orange "Order Now" (`NEXT_PUBLIC_ORDER_URL`) + phone
+   **(519) 290-9555**.
+4. **Intro / value** — 2–3 short paragraphs, keyword + variants woven naturally. State the
+   entity for GEO: *"Noni's Pizza & Wings is a locally owned pizza, wings and shawarma
+   restaurant in Woodstock, Ontario."*
+5. **Why Noni's** — bulleted concrete, quotable differentiators (freshly prepared never
+   pre-cooked; Indian-fusion pizzas; baked wings; custom pizza & panzerotti; Kawartha ice
+   cream; locally owned).
+6. **Menu highlights + price `<table>`** — 4–8 relevant items with prices; link to `/menu`.
+7. **How to order (HowTo)** — numbered steps, marked up with **HowTo JSON-LD**.
+8. **Delivery / hours facts** — address, hours per day, 3 km radius, $25 after-3 PM
+   threshold, phone. Identical to NAP everywhere.
+9. **FAQ (AEO + GEO core)** — 5–8 voice-style question headings; each answer self-contained
+   1–3 sentences. Marked up with **FAQPage JSON-LD**.
+10. **Internal links** — to the other cluster pages + `/menu` + `/deals`, descriptive anchors.
+11. **Map + NAP block** — embedded map of the real address + full NAP.
+12. **Visible "Last updated: <date>" stamp** (freshness signal for GEO).
+
+Every cluster page must have **genuinely unique copy** — vary intro, FAQs and highlights per
+intent. Thin/cloned pages get filtered.
+
+### Structured data per page
+- **Global (root layout):** `Restaurant` (LocalBusiness subtype) — NAP, geo,
+  `openingHoursSpecification`, `servesCuisine`, `priceRange "$$"`, `hasMenu`, `areaServed`
+  "Woodstock, ON", `sameAs`. We emit this **once globally** and do NOT duplicate a second
+  full Restaurant node per page (avoids conflicting entities — better for GEO).
+- **Landing pages:** add `FAQPage` + `BreadcrumbList`.
+- **Order / how-to pages:** add `HowTo`.
+- **`/menu`:** `Menu` + `MenuSection` + `MenuItem` with `offers`/price.
+- **`/reviews`:** `Review`/`AggregateRating` **only if real reviews** — otherwise omit and
+  label testimonials as samples.
+- **NAP in schema is byte-for-byte identical** to visible NAP and Google Business Profile.
+
+### AEO checklist
+Lead with the 40–60 word direct answer · question-style H2s mirroring voice queries ·
+self-contained answers (readable out of context) · tables for prices/comparisons · ordered
+lists for steps · FAQPage + HowTo schema · concise, definition-first, scannable writing.
+
+### GEO checklist
+State the brand as a clear entity in paragraph 1 of every page · always "Noni's Pizza &
+Wings" (never variants) · specific verifiable facts (hours, 3 km radius, $25 threshold, named
+signature dishes, "never pre-cooked") · visible "Last updated" stamp · comparison tables &
+factual lists LLMs can extract · structured data mirrors visible content · no vague fluff.
+
+---
+
 ## 8. How to work in this repo
 
 1. **Read this file, then `DESIGN.md`.**

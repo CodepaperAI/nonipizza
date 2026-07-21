@@ -106,6 +106,27 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
+/** HowTo — for order/how-to pages. steps = [{name, text}]. */
+export function howToJsonLd(opts: {
+  name: string;
+  description?: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: opts.name,
+    ...(opts.description ? { description: opts.description } : {}),
+    step: opts.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+      url: `${siteConfig.orderUrl}`,
+    })),
+  };
+}
+
 /** FAQPage from Q/A pairs. */
 export function faqJsonLd(faqs: { q: string; a: string }[]) {
   return {
