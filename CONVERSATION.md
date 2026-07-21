@@ -5,6 +5,23 @@
 
 ---
 
+## Entry 1 — full v1 build — 2026-07-21
+
+- Scaffolded Next.js 14 (App Router) + TypeScript + Tailwind manually (no interactive CLI);
+  tokens in `tailwind.config.ts` + CSS vars, Anton (display) + Inter (body) via next/font.
+- Encoded the entire menu in `src/data/menu.ts`, deals/coupons in `deals.ts`, NAP/hours/geo
+  in `locations.ts`; central config + SEO + JSON-LD helpers in `src/lib`.
+- Built the design system + all homepage sections (Nav, Hero, CategoryCarousel, MenuSection
+  with client filter pills, Steps, PromoStrip, Deals, AppCTA, Footer w/ live map + newsletter).
+- Shipped all 11 routes: `/`, `/menu` (Menu JSON-LD), `/deals`, 6 local-intent landing pages
+  (each unique H1/copy/FAQ schema, internal links), `/find-us` (LocalBusiness+FAQ), `/reviews`
+  (clearly-labeled placeholders, no fake rating schema). Added sitemap.ts + robots.ts.
+- Branded SVG placeholder art via `DishImage` (real-photo slots named in data); README added.
+- `npm run build` → 16/16 static pages; dev smoke test: all routes 200, JSON-LD + order URL
+  wired. Committed.
+
+---
+
 ## Entry 0 — project kickoff — 2026-07-21
 
 - Received full brief: build a production-ready marketing + online-ordering site for
