@@ -45,27 +45,25 @@ cp .env.example .env.local
 
 ## Where to swap real photos
 
-The site ships with **branded SVG placeholders** (warm gradient blocks with the dish
-name) so every layout is complete without shipping copyrighted stock. They are rendered
-by [`src/components/DishImage.tsx`](./src/components/DishImage.tsx).
+The site ships with **generic category photos from Unsplash** (self-hosted in
+`public/images/photos/`, Unsplash License — see [`CREDITS.md`](./CREDITS.md)), plus a
+**branded SVG placeholder** fallback for any unmapped slot. Images are rendered by
+[`src/components/DishImage.tsx`](./src/components/DishImage.tsx) and mapped to
+categories / items / deals in [`src/lib/photos.ts`](./src/lib/photos.ts).
 
-Each menu item / deal has an `image` slot path (e.g. `/images/pizza-butter-chicken.jpg`)
-in `src/data/menu.ts` and `src/data/deals.ts` that **names where the real photo goes**.
+> These stock photos are **not** Noni's actual dishes — they complete the launch layout.
+> Swap in real food photography anytime.
 
-To go live with real photography:
+**To use real dish photos:**
 
-1. Drop optimized JPEG/WebP files into `public/images/` at those slot paths.
-2. In `DishImage.tsx`, replace the placeholder markup with `next/image`:
-   ```tsx
-   import Image from "next/image";
-   // ...
-   <Image src={src} alt={`${name}`} fill className="object-cover" />
-   ```
-   (pass the item's `image` in as a `src` prop).
-3. Update `public/images/og-default.svg` / add a real `og-default.jpg` for social sharing
-   and point `src/lib/seo.ts` at it.
+1. Add optimized JPEG/WebP files to `public/images/photos/`.
+2. Point at them in `src/lib/photos.ts` (category, item, deal, and hero maps) — that's the
+   single place image choices live. `DishImage` handles `next/image` optimization and the
+   SVG fallback automatically; no component edits needed.
+3. Optionally add a real `og-default.jpg` for social sharing and point `src/lib/seo.ts` at it.
 
-Keep `alt` text descriptive (the dish name is already passed in).
+`alt` text is the dish/category name, already passed in. Keep new photos landscape and
+reasonably sized (≈1400px wide) — `next/image` generates responsive variants.
 
 ---
 

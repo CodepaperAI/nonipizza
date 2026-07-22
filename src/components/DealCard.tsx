@@ -1,6 +1,7 @@
 import { DishImage } from "./DishImage";
 import { Button } from "./ui/Button";
 import { siteConfig } from "@/lib/site";
+import { dealPhoto } from "@/lib/photos";
 import { price } from "@/data/menu";
 import type { Deal, Accent } from "@/data/deals";
 
@@ -21,7 +22,14 @@ export function DealCard({ deal }: { deal: Deal }) {
   return (
     <article className={`flex flex-col overflow-hidden rounded-3xl shadow-card ${BG[deal.accent]}`}>
       <div className="relative aspect-[16/9] w-full">
-        <DishImage name={deal.name} accent={deal.accent} rounded="rounded-none" className="h-full w-full" />
+        <DishImage
+          name={deal.name}
+          accent={deal.accent}
+          src={dealPhoto(deal)}
+          rounded="rounded-none"
+          className="h-full w-full"
+          sizes="(max-width: 768px) 100vw, 580px"
+        />
         {typeof deal.save === "number" && (
           <span className="absolute right-3 top-3 rounded-full bg-maroon px-3 py-1 text-label font-bold uppercase text-cream">
             Save ${deal.save}

@@ -1,19 +1,30 @@
+import Image from "next/image";
 import { Badge } from "./ui/Badge";
 import { Button } from "./ui/Button";
 import { CategoryCarousel } from "./CategoryCarousel";
 import { siteConfig } from "@/lib/site";
+import { heroPhoto } from "@/lib/photos";
 
 /** Homepage hero (DESIGN.md Hero). Maroon bg, huge stacked headline, two CTAs, carousel. */
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-maroon text-cream">
-      {/* warm radial glow */}
+      {/* lifestyle photo background */}
+      <Image
+        src={heroPhoto}
+        alt="Friends sharing a freshly made pizza at the table"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center opacity-25"
+      />
+      {/* maroon overlay + warm radial glow keep text readable over the photo */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 50% at 50% 0%, rgba(242,107,33,0.25) 0%, rgba(75,13,18,0) 70%)",
+            "linear-gradient(180deg, rgba(75,13,18,0.82) 0%, rgba(75,13,18,0.88) 60%, rgba(75,13,18,0.96) 100%), radial-gradient(60% 50% at 50% 0%, rgba(242,107,33,0.28) 0%, rgba(75,13,18,0) 70%)",
         }}
       />
       <div className="relative mx-auto max-w-container px-5 pb-10 pt-28 sm:px-8 sm:pt-36">

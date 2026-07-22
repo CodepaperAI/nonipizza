@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { DishImage } from "./DishImage";
+import { categoryPhoto } from "@/lib/photos";
 import { menuCategories } from "@/data/menu";
 
 /**
@@ -39,8 +40,10 @@ export function CategoryCarousel() {
           <DishImage
             name={cat.label}
             accent={cat.accent}
+            src={categoryPhoto(cat.id)}
             rounded="rounded-2xl"
             className="h-full w-full transition group-hover:scale-105"
+            sizes="(max-width: 640px) 60vw, 224px"
           />
           <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-maroon via-maroon/70 to-transparent p-4 pt-10">
             <span className="block font-display text-xl uppercase leading-none text-cream">

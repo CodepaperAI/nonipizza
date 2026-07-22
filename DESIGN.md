@@ -225,9 +225,13 @@ reviews are supplied) → CTA → Footer.
 
 ## 7. Imagery
 
-- Placeholder food images in `/public/images/` with descriptive filenames that name the
-  slot for real photos (e.g. `pizza-butter-chicken.jpg`, `wings-honey-garlic.jpg`).
-- All images have meaningful `alt` text. Hero image optimized for fast LCP
-  (`priority`, `next/image`). **No hotlinked / copyrighted stock.**
-- v1 ships lightweight SVG placeholders (branded colored blocks with the dish name) so
-  the layout is complete; drop real JPEGs into the same paths to go live.
+- **Real photos** live in `public/images/photos/` — generic category food photography from
+  Unsplash (Unsplash License, self-hosted, see `CREDITS.md`). Mapped to categories/items/
+  deals via `src/lib/photos.ts`.
+- `DishImage` renders an optimized `next/image` when a photo `src` is mapped, and **falls
+  back to a branded SVG placeholder** (warm gradient block + dish name) when a slot is empty.
+  So the layout is always complete; drop real dish JPEGs at the mapped paths to go fully live.
+- Hero uses `hero-spread.jpg` as a background under a maroon overlay (`priority` for fast LCP).
+- Honesty rule: Indian-fusion **pizza** product cards use a pizza photo, not the curry image
+  (`indian-fusion.jpg` is a category teaser only) — no card misrepresents the actual product.
+- All images have meaningful `alt` text. **No hotlinked stock — everything is self-hosted.**

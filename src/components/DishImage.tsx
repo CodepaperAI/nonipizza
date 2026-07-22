@@ -1,12 +1,11 @@
+import Image from "next/image";
 import type { Accent } from "@/data/deals";
 
 /**
- * Branded SVG placeholder for a dish (DESIGN.md §7). v1 renders a warm gradient block
- * with the dish name + a plate glyph so every layout is complete without shipping
- * copyrighted stock. The `src` in menu/deals data names the slot for the real photo.
- *
- * To go live with real photos: drop a JPEG at the slot path and swap this for
- * <Image src={src} .../> (next/image) — see README.
+ * Dish image. When a real photo `src` is provided (see src/lib/photos.ts) it renders an
+ * optimized next/image; otherwise it falls back to a branded SVG placeholder (a warm
+ * gradient block with the dish name). The photo slots are generic category imagery from
+ * Unsplash (CREDITS.md) — swap in real dish photos at the same paths anytime.
  */
 
 const ACCENT_HEX: Record<Accent, string> = {
@@ -17,32 +16,47 @@ const ACCENT_HEX: Record<Accent, string> = {
   red: "#D93A2B",
 };
 
-const GLYPHS: Record<string, string> = {
-  pizza: "M12 2 2 22h20L12 2Z",
-};
-
 export function DishImage({
   name,
   accent = "orange",
+  src,
   className = "",
   rounded = "rounded-2xl",
+  sizes = "(max-width: 640px) 100vw, 400px",
+  priority = false,
 }: {
   name: string;
   accent?: Accent;
+  /** Real photo path under /public. Falls back to the SVG placeholder when omitted. */
+  src?: string;
   className?: string;
   rounded?: string;
+  sizes?: string;
+  priority?: boolean;
 }) {
+  if (src) {
+    return (
+      <div className={`relative overflow-hidden ${rounded} ${className}`}>
+        <Image
+          src={src}
+          alt={name}
+          fill
+          sizes={sizes}
+          priority={priority}
+          className="object-cover"
+        />
+      </div>
+    );
+  }
+
   const hex = ACCENT_HEX[accent];
   return (
     <div
       role="img"
       aria-label={`${name} — photo placeholder`}
       className={`relative flex items-center justify-center overflow-hidden ${rounded} ${className}`}
-      style={{
-        background: `linear-gradient(135deg, ${hex} 0%, #4B0D12 100%)`,
-      }}
+      style={{ background: `linear-gradient(135deg, ${hex} 0%, #4B0D12 100%)` }}
     >
-      {/* decorative dots pattern */}
       <svg
         aria-hidden="true"
         className="absolute inset-0 h-full w-full opacity-20"
@@ -62,5 +76,3 @@ export function DishImage({
     </div>
   );
 }
-
-export { GLYPHS };

@@ -5,6 +5,22 @@
 
 ---
 
+## Entry 3 — Real photography (Unsplash) — 2026-07-22
+
+- Requested: real pictures from Unsplash. Downloaded & self-hosted 10 category food photos
+  to `public/images/photos/` (Unsplash License); **visually verified each** depicts the right
+  dish before wiring (pizza, margherita, wings, shawarma, curry, panzerotti/calzone, fries,
+  salad, ice-cream cone, pizza-table hero).
+- `DishImage` now renders optimized `next/image` when a photo is mapped, with the branded SVG
+  as automatic fallback. New `src/lib/photos.ts` maps category/item/deal/hero → photo.
+- Wired into Hero (background under maroon overlay, `priority` LCP), CategoryCarousel,
+  ProductCard, DealCard. Honesty guard: Indian-fusion **pizza** cards use a pizza photo, not
+  the curry (curry is a category teaser only) — no card misrepresents the product.
+- Added `CREDITS.md` (attribution + "these are stock, not Noni's actual dishes"); updated
+  README/DESIGN photo notes. Clean build 19/19; all photos serve 200 + next/image optimizer OK.
+
+---
+
 ## Entry 2 — Search layer (SEO/AEO/GEO) — 2026-07-22
 
 - Added **§7a Search Strategy** to CLAUDE.md: SEO/AEO/GEO definitions, permanent **Rule 0**

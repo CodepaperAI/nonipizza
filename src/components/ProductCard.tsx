@@ -1,6 +1,7 @@
 import { DishImage } from "./DishImage";
 import { Button } from "./ui/Button";
 import { siteConfig } from "@/lib/site";
+import { itemPhoto } from "@/lib/photos";
 import { price, startingPrice, type MenuItem } from "@/data/menu";
 import type { Accent } from "@/data/deals";
 
@@ -19,7 +20,14 @@ export function ProductCard({
   return (
     <article className="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-card transition hover:-translate-y-1">
       <div className="relative aspect-[4/3] w-full">
-        <DishImage name={item.name} accent={accent} rounded="rounded-none" className="h-full w-full" />
+        <DishImage
+          name={item.name}
+          accent={accent}
+          src={itemPhoto(item)}
+          rounded="rounded-none"
+          className="h-full w-full"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+        />
         {item.isNew && (
           <span className="absolute left-3 top-3 rounded-full bg-red px-3 py-1 text-label font-bold uppercase text-white">
             New
