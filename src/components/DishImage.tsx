@@ -2,10 +2,10 @@ import Image from "next/image";
 import type { Accent } from "@/data/deals";
 
 /**
- * Dish image. When a real photo `src` is provided (see src/lib/photos.ts) it renders an
+ * Dish image. When a photo `src` is provided (see src/lib/photos.ts) it renders an
  * optimized next/image; otherwise it falls back to a branded SVG placeholder (a warm
- * gradient block with the dish name). The photo slots are generic category imagery from
- * Unsplash (CREDITS.md) — swap in real dish photos at the same paths anytime.
+ * gradient block with the dish name). The photo slots are AI-generated dish renders
+ * (CREDITS.md) — swap in real photography at the same paths anytime.
  */
 
 const ACCENT_HEX: Record<Accent, string> = {

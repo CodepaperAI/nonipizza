@@ -80,14 +80,20 @@ exclusive of HST, subject to change.
 | Sitemap/robots | **Next.js route handlers** (`app/sitemap.ts`, `app/robots.ts`) | No extra dependency (chose this over `next-sitemap`) |
 | Structured data | **JSON-LD** (Restaurant/LocalBusiness, Menu, FAQPage, BreadcrumbList) | Rich results, local SEO |
 | Data | Typed files in `/src/data` | No DB needed for v1 |
-| Ordering | External URL via `NEXT_PUBLIC_ORDER_URL` | Placeholder `https://www.nonispizza.ca` |
+| Ordering | External URL via `NEXT_PUBLIC_ORDER_URL` | Defaults to Noni's Mealsy online-ordering page |
 
 **Do not add dependencies beyond this stack without a note here.**
 
+> **Dev/build tooling:** `sharp` (devDependency) is used only by a one-off image-prep step to
+> resize/compress source dish images into `public/images/photos/*.jpg` (~1200px, JPEG q80). It
+> is not imported by the app at runtime. Menu-item photos are AI-generated renders mapped in
+> `src/lib/photos.ts` (see `CREDITS.md`).
+
 ### Environment variables
-- `NEXT_PUBLIC_ORDER_URL` — external online-ordering URL. Default/placeholder
-  `https://www.nonispizza.ca`. Every "Order Now" CTA reads from
-  `src/lib/site.ts` which reads this env var.
+- `NEXT_PUBLIC_ORDER_URL` — external online-ordering URL. Defaults to Noni's **Mealsy**
+  page (`https://onlineordering.mealsy.ca/en/#/Nonis-Pizza-And-Wings/online/menus`). Every
+  "Order Now" CTA reads from `src/lib/site.ts` which reads this env var. (Ordering is
+  web-only — no native app, so there are no App Store / Play Store links.)
 - `NEXT_PUBLIC_SITE_URL` — canonical site origin (default `https://www.nonispizza.ca`),
   used for canonical URLs, Open Graph, and the sitemap.
 

@@ -63,13 +63,6 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
-              <h2 className="mb-4 mt-8 text-label font-bold uppercase tracking-widest text-orange">
-                Get the App
-              </h2>
-              <div className="flex flex-col gap-2">
-                <StoreBadge store="apple" href={siteConfig.appLinks.apple} />
-                <StoreBadge store="google" href={siteConfig.appLinks.google} />
-              </div>
             </div>
           </div>
 
@@ -179,25 +172,5 @@ export function Footer() {
         </p>
       </div>
     </footer>
-  );
-}
-
-function StoreBadge({ store, href }: { store: "apple" | "google"; href: string }) {
-  const label = store === "apple" ? "App Store" : "Google Play";
-  const top = store === "apple" ? "Download on the" : "Get it on";
-  return (
-    <a
-      href={href}
-      className="inline-flex items-center gap-3 rounded-xl bg-cream/10 px-4 py-2 ring-1 ring-cream/20 transition hover:bg-cream/20"
-      aria-label={`${top} ${label} (placeholder)`}
-    >
-      <span aria-hidden="true" className="text-2xl">
-        {store === "apple" ? "" : "▶"}
-      </span>
-      <span className="leading-tight">
-        <span className="block text-[0.6rem] uppercase text-cream/70">{top}</span>
-        <span className="block text-sm font-bold">{label}</span>
-      </span>
-    </a>
   );
 }

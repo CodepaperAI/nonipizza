@@ -31,7 +31,7 @@ Copy `.env.example` to `.env.local` and set:
 
 | Variable | Purpose | Default (placeholder) |
 | --- | --- | --- |
-| `NEXT_PUBLIC_ORDER_URL` | External ordering URL every **Order Now** button opens | `https://www.nonispizza.ca` |
+| `NEXT_PUBLIC_ORDER_URL` | External ordering URL every **Order Now** button opens | Noni's Mealsy online-ordering page |
 | `NEXT_PUBLIC_SITE_URL` | Canonical site origin (canonical tags, Open Graph, sitemap) | `https://www.nonispizza.ca` |
 
 ```bash
@@ -45,14 +45,14 @@ cp .env.example .env.local
 
 ## Where to swap real photos
 
-The site ships with **generic category photos from Unsplash** (self-hosted in
-`public/images/photos/`, Unsplash License — see [`CREDITS.md`](./CREDITS.md)), plus a
-**branded SVG placeholder** fallback for any unmapped slot. Images are rendered by
+The site ships with **AI-generated dish renders** — one per menu item, plus category
+teasers and the hero (self-hosted in `public/images/photos/` — see [`CREDITS.md`](./CREDITS.md)),
+plus a **branded SVG placeholder** fallback for any unmapped slot. Images are rendered by
 [`src/components/DishImage.tsx`](./src/components/DishImage.tsx) and mapped to
 categories / items / deals in [`src/lib/photos.ts`](./src/lib/photos.ts).
 
-> These stock photos are **not** Noni's actual dishes — they complete the launch layout.
-> Swap in real food photography anytime.
+> These AI-generated images are **not** photographs of Noni's actual dishes — they complete
+> the launch layout. Swap in real food photography anytime.
 
 **To use real dish photos:**
 

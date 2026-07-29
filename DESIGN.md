@@ -164,14 +164,14 @@ White card, `rounded-3xl`, soft shadow. Structure:
 - Populated from `deals.ts` (coupons) + everyday deals.
 
 ### AppCTA
-- Phone mockup with a bottom tab bar (Home · Orders · My Cart · Notification · More) +
-  **App Store / Google Play badges** (placeholder links). Maroon or cream section.
+- Phone mockup with a bottom tab bar (Home · Orders · My Cart · Notification · More).
+  Maroon section with **"Order Now"** + **"View Menu"** CTAs. Web-only online ordering —
+  no native app, so no App Store / Play Store badges.
 
 ### Footer
 - **Maroon background.** Columns:
   - `QUICK LINKS` (Menu, Deals, Find Us, Reviews, local pages)
   - `LEGAL` (Privacy, Terms, Refund)
-  - `GET THE APP` (store badges)
   - Newsletter **"NEVER MISS A DEAL AGAIN"** (email input + orange **SUBSCRIBE**,
     "No spam, ever.")
 - Right: **embedded map** of the real Woodstock address + **"COME SAY HI"** with address,
@@ -224,13 +224,13 @@ reviews are supplied) → CTA → Footer.
 
 ## 7. Imagery
 
-- **Real photos** live in `public/images/photos/` — generic category food photography from
-  Unsplash (Unsplash License, self-hosted, see `CREDITS.md`). Mapped to categories/items/
-  deals via `src/lib/photos.ts`.
+- **Dish photos** live in `public/images/photos/` — AI-generated food renders (one per menu
+  item + category teasers, self-hosted, see `CREDITS.md`), optimized to ~1200px JPEG. Mapped
+  via `src/lib/photos.ts` (per-item id map + category fallbacks). Salads still use a stock photo.
 - `DishImage` renders an optimized `next/image` when a photo `src` is mapped, and **falls
   back to a branded SVG placeholder** (warm gradient block + dish name) when a slot is empty.
   So the layout is always complete; drop real dish JPEGs at the mapped paths to go fully live.
 - Hero uses `hero-spread.jpg` as a background under a maroon overlay (`priority` for fast LCP).
-- Honesty rule: Indian-fusion **pizza** product cards use a pizza photo, not the curry image
-  (`indian-fusion.jpg` is a category teaser only) — no card misrepresents the actual product.
+- Honesty rule: images are illustrative AI renders, not photos of Noni's actual plates (each
+  still depicts the correct dish); the discontinued shawarma renders are unused.
 - All images have meaningful `alt` text. **No hotlinked stock — everything is self-hosted.**

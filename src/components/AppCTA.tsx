@@ -1,7 +1,7 @@
 import { Button } from "./ui/Button";
 import { siteConfig } from "@/lib/site";
 
-/** App / order CTA with a phone mockup + store badges (DESIGN.md AppCTA). */
+/** Online-order CTA with a phone mockup (DESIGN.md AppCTA). */
 
 const tabs = ["Home", "Orders", "My Cart", "Notification", "More"];
 
@@ -24,10 +24,6 @@ export function AppCTA() {
             <Button href="/menu" variant="outline" size="lg">
               View Menu
             </Button>
-          </div>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <StoreBadge store="apple" href={siteConfig.appLinks.apple} />
-            <StoreBadge store="google" href={siteConfig.appLinks.google} />
           </div>
         </div>
 
@@ -64,23 +60,5 @@ export function AppCTA() {
         </div>
       </div>
     </section>
-  );
-}
-
-function StoreBadge({ store, href }: { store: "apple" | "google"; href: string }) {
-  const label = store === "apple" ? "App Store" : "Google Play";
-  const top = store === "apple" ? "Download on the" : "Get it on";
-  return (
-    <a
-      href={href}
-      className="inline-flex items-center gap-3 rounded-xl bg-cream/10 px-4 py-2 ring-1 ring-cream/20 transition hover:bg-cream/20"
-      aria-label={`${top} ${label} (placeholder link)`}
-    >
-      <span aria-hidden="true" className="text-2xl">{store === "apple" ? "" : "▶"}</span>
-      <span className="leading-tight">
-        <span className="block text-[0.6rem] uppercase text-cream/70">{top}</span>
-        <span className="block text-sm font-bold">{label}</span>
-      </span>
-    </a>
   );
 }

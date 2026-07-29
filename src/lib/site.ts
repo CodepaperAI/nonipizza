@@ -11,19 +11,16 @@ export const siteConfig = {
     "Freshly Prepared, Never Pre-Cooked, Simply Delicious, Made Just for You!",
   shortDescription:
     "Locally owned pizza, baked wings & Indian-fusion pizzas in Woodstock, ON. Order online for pickup or delivery.",
-  // External ordering URL — configurable via env, placeholder default.
-  orderUrl: process.env.NEXT_PUBLIC_ORDER_URL ?? "https://www.nonispizza.ca",
+  // External ordering URL — Mealsy online ordering. Overridable via NEXT_PUBLIC_ORDER_URL.
+  orderUrl:
+    process.env.NEXT_PUBLIC_ORDER_URL ??
+    "https://onlineordering.mealsy.ca/en/#/Nonis-Pizza-And-Wings/online/menus",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nonispizza.ca",
   priceRange: "$$",
   cuisines: ["Pizza", "Chicken Wings", "Indian"],
   socials: {
     instagram: "https://www.instagram.com/",
     facebook: "https://www.facebook.com/",
-  },
-  // App store placeholders (see DESIGN.md AppCTA / Footer).
-  appLinks: {
-    apple: "#",
-    google: "#",
   },
   location: primaryLocation,
 } as const;

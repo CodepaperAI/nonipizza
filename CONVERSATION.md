@@ -5,6 +5,35 @@
 
 ---
 
+## Entry 6 — Real ordering URL + drop app badges — 2026-07-29
+
+- Pointed all **Order Now / Grab Deal** CTAs at Noni's **Mealsy** online-ordering page
+  (`onlineordering.mealsy.ca/en/#/Nonis-Pizza-And-Wings/online/menus`) — set as the default
+  `orderUrl` in `src/lib/site.ts` (still overridable via `NEXT_PUBLIC_ORDER_URL`); updated `.env.example`.
+- Ordering is **web-only**, so removed the App Store / Google Play badges: dropped `StoreBadge`
+  from `AppCTA.tsx` and the Footer "Get the App" column, and deleted the now-unused `appLinks` config.
+- Updated CLAUDE.md / README / DESIGN.md (order-URL default, no-app note, and the imagery section
+  that still described the old Unsplash photos).
+- Verified on a fresh prod server: 29 CTAs resolve to the Mealsy URL (new tab, `rel=noopener`), zero
+  app-badge markup, viewport meta + `sm/md/lg` responsive classes intact. Clean build 18/18.
+
+---
+
+## Entry 5 — Per-dish images (AI renders) — 2026-07-29
+
+- Owner supplied 38 AI-generated (Gemini), watermark-cleaned dish PNGs (~9 MB each) in
+  `gemini-watermark-cleaned/`. Optimized **36** → ~1200px JPEG q80 (8.2 MB total) into
+  `public/images/photos/` via `sharp` (added as a **devDependency**; noted in CLAUDE.md).
+- **Skipped** `cat-shawarma` + `shawarma-platter` (discontinued); **kept** the Chicken Shawarma
+  Pizza render. Spot-checked several images render correctly & watermark-free.
+- Reworked `src/lib/photos.ts` to a **per-menu-item photo map** (each pizza/wing/etc. now gets its
+  own render) with category-teaser + category-fallback maps; updated `dealPhoto`. Deleted 5 orphaned
+  generic stock jpgs (salad.jpg stays — still Unsplash). Rewrote CREDITS.md; ignored the source PNG folder.
+- Honesty: images are **illustrative AI renders, not photos of Noni's actual plates** (noted in
+  CREDITS/README/DishImage). Clean build 18/18; verified all 37 paths exist + optimizer serves 200.
+
+---
+
 ## Entry 4 — Discontinue shawarma + drop free delivery — 2026-07-29
 
 - Owner: **shawarma is discontinued** and the **"free delivery after 3 PM"** offer is gone.

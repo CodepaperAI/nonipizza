@@ -14,6 +14,9 @@
 .DS_Store
 *.pem
 
+# source dish images (large PNGs) — optimized JPGs ship in public/images/photos
+/gemini-watermark-cleaned/
+
 # debug
 npm-debug.log*
 yarn-debug.log*
