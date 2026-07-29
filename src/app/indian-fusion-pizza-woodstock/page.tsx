@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "Can I order butter chicken pizza for delivery?",
-    a: "Yes — order any Indian-fusion pizza online for pickup or delivery. Free delivery within 3 km on orders over $25 after 3 PM.",
+    a: "Yes — order any Indian-fusion pizza online for pickup or delivery. Delivery within 3 km on orders over $25.",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function Page() {
           {
             heading: "Woodstock's home of Indian-style pizza",
             body: [
-              "Noni's Pizza & Wings is a locally owned pizza, wings and shawarma restaurant in Woodstock, Ontario — and Indian fusion pizza is what we're known for. We take the flavours South Asian families grew up on (creamy butter chicken, smoky tandoori, fiery spice) and put them on a hand-built, fresh-baked pizza.",
+              "Noni's Pizza & Wings is a locally owned pizza and wings restaurant in Woodstock, Ontario — and Indian fusion pizza is what we're known for. We take the flavours South Asian families grew up on (creamy butter chicken, smoky tandoori, fiery spice) and put them on a hand-built, fresh-baked pizza.",
               "If you've searched for Indian pizza near you or wished a big pizza brand did a proper butter chicken pie, this is it — the same craveable idea, done locally and freshly, never pre-cooked. For Woodstock's Indian and South Asian community it's a familiar taste in fast-casual form; for adventurous pizza lovers it's the most exciting thing on any menu in town.",
             ],
           },

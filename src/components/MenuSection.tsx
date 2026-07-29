@@ -18,7 +18,6 @@ const FILTERS: { id: FilterId; label: string }[] = [
   { id: "hot", label: "Hot Selling" },
   { id: "pizza", label: "Pizza" },
   { id: "wings", label: "Wings" },
-  { id: "shawarma", label: "Shawarma" },
   { id: "indian-fusion", label: "Indian Fusion" },
   { id: "salads", label: "Salads" },
   { id: "sides", label: "Sides" },

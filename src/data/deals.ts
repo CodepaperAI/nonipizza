@@ -138,44 +138,6 @@ export const everydayDeals: Deal[] = [
 /** Coupon deals (each has a code). */
 export const couponDeals: Deal[] = [
   {
-    id: "coupon-shawarma-combo",
-    name: "Shawarma Sandwiches Combo",
-    includes: ["2 shawarma sandwiches combo"],
-    prices: [{ label: "", price: 11.99 }],
-    code: "010425",
-    accent: "sky",
-    image: "/images/coupon-shawarma-combo.svg",
-    featured: true,
-  },
-  {
-    id: "coupon-2-platters",
-    name: "Noni's 2 Platters Special",
-    includes: ["2 shawarma platters"],
-    prices: [{ label: "", price: 26.99 }],
-    code: "020425",
-    accent: "pink",
-    image: "/images/coupon-2-platters.svg",
-    featured: true,
-  },
-  {
-    id: "coupon-testy-combo",
-    name: "$10 Deal – Testy Combo",
-    includes: ["Small shawarma sandwich", "Baklava"],
-    prices: [{ label: "", price: 10.0 }],
-    code: "030425",
-    accent: "yellow",
-    image: "/images/coupon-testy-combo.svg",
-  },
-  {
-    id: "coupon-family-meal-10off",
-    name: "10% off Shawarma Family Meal",
-    includes: ["10% off Family Meal / Meal Mixed"],
-    prices: [],
-    code: "040425",
-    accent: "orange",
-    image: "/images/coupon-family-meal.svg",
-  },
-  {
     id: "coupon-family-feast-10off",
     name: "10% off Pizza Family Feast",
     includes: ["10% off the Family Feast Deal"],
@@ -210,7 +172,6 @@ export const couponDeals: Deal[] = [
 export const everydaySpecials = [
   "Seniors save 10% Mon–Thu",
   "Happy Hour 2–5 PM daily (10% off $25+)",
-  "Free delivery after 3 PM (3 km, $25+ min)",
 ];
 
 export const featuredDeals = (): Deal[] =>

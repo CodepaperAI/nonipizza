@@ -10,12 +10,12 @@ export const siteConfig = {
   tagline:
     "Freshly Prepared, Never Pre-Cooked, Simply Delicious, Made Just for You!",
   shortDescription:
-    "Locally owned pizza, baked wings, shawarma & Indian-fusion pizzas in Woodstock, ON. Order online for pickup or delivery.",
+    "Locally owned pizza, baked wings & Indian-fusion pizzas in Woodstock, ON. Order online for pickup or delivery.",
   // External ordering URL — configurable via env, placeholder default.
   orderUrl: process.env.NEXT_PUBLIC_ORDER_URL ?? "https://www.nonispizza.ca",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.nonispizza.ca",
   priceRange: "$$",
-  cuisines: ["Pizza", "Chicken Wings", "Shawarma", "Indian"],
+  cuisines: ["Pizza", "Chicken Wings", "Indian"],
   socials: {
     instagram: "https://www.instagram.com/",
     facebook: "https://www.facebook.com/",

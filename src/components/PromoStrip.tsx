@@ -17,13 +17,13 @@ export function PromoStrip() {
       />
       <div className="relative mx-auto flex max-w-container flex-col items-center gap-6 px-5 py-12 text-center text-maroon sm:flex-row sm:justify-between sm:px-8 sm:text-left">
         <div>
-          <p className="text-label font-bold uppercase tracking-widest">Limited-time offer</p>
+          <p className="text-label font-bold uppercase tracking-widest">Everyday specials</p>
           <h2 className="mt-2 font-display uppercase text-display-lg leading-none sm:text-4xl">
-            Free delivery after 3 PM
+            Happy Hour, 2–5 PM daily
           </h2>
           <p className="mt-2 max-w-lg text-maroon/80">
-            On orders $25+ within 3 km. Plus Happy Hour 2–5 PM daily & seniors save
-            10% Mon–Thu.
+            10% off orders $25+ every afternoon. Plus seniors save 10% Mon–Thu &
+            delivery within 3 km.
           </p>
         </div>
         <Button href={siteConfig.orderUrl} external variant="filledMaroon" size="lg">

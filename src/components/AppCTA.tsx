@@ -40,7 +40,7 @@ export function AppCTA() {
                 Tonight&apos;s craving?
               </p>
               <div className="mt-4 space-y-3">
-                {["Butter Chicken Pizza", "Honey Garlic Wings", "Chicken Shawarma"].map((n, i) => (
+                {["Butter Chicken Pizza", "Honey Garlic Wings", "Handcrafted Panzerotti"].map((n, i) => (
                   <div key={n} className="flex items-center gap-3 rounded-2xl bg-cream p-3">
                     <span
                       className="h-10 w-10 shrink-0 rounded-xl"

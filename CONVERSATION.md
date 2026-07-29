@@ -5,6 +5,20 @@
 
 ---
 
+## Entry 4 — Discontinue shawarma + drop free delivery — 2026-07-29
+
+- Owner: **shawarma is discontinued** and the **"free delivery after 3 PM"** offer is gone.
+- Removed the whole shawarma line (menu category, `/shawarma-woodstock` page, coupons,
+  `shawarmaSaucesAndToppings`, nav/footer/sitemap, `servesCuisine`, `shawarma.jpg`) **and** the
+  shawarma-based **Family Meals** category. Kept the **Chicken Shawarma Pizza** (a topping flavour).
+- Delivery is now **standard/paid within 3 km on $25+** — dropped "free" and "after 3 PM" site-wide
+  (removed `delivery.afterTime`; rewrote FactsBlock/HowToOrder/NapMap + every landing FAQ/lead/CTA).
+  Repurposed the homepage `PromoStrip` from free-delivery to **Happy Hour**.
+- Updated CLAUDE.md (added a **"discontinued — do not re-add"** note), DESIGN.md, README, CREDITS.
+  Refreshed `LAST_UPDATED`/sitemap to 2026-07-29. Clean build **18/18** static pages, no type/lint errors.
+
+---
+
 ## Entry 3 — Real photography (Unsplash) — 2026-07-22
 
 - Requested: real pictures from Unsplash. Downloaded & self-hosted 10 category food photos

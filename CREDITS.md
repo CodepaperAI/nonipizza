@@ -17,7 +17,6 @@ hotlinked).
 | `pizza.jpg` | Cheese pizza (overhead) | Pizza category + pizza product cards + deals | photo-1513104890138-7c749659a591 |
 | `pizza-2.jpg` | Margherita pizza | Indian-fusion **pizza** product cards | photo-1574071318508-1cdbab80d002 |
 | `wings.jpg` | Buffalo chicken wings | Wings category, cards & wing deals | photo-1608039755401-742074f0548d |
-| `shawarma.jpg` | Chicken shawarma wraps | Shawarma category, cards & platter deals | photo-1529006557810-274b9b2fc783 |
 | `indian-fusion.jpg` | Paneer / butter curry | Indian-fusion category **teaser** only | photo-1588166524941-3bf61a9c41db |
 | `panzerotti.jpg` | Cut calzone / panzerotti | Panzerotti category & cards | photo-1536964549204-cce9eab227bd |
 | `sides.jpg` | French fries | Sides category, cards & fries deals | photo-1518013431117-eb1465fa5752 |

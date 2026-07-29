@@ -18,7 +18,6 @@ export const heroPhoto = `${P}/hero-spread.jpg`;
 const CATEGORY_PHOTO: Partial<Record<MenuCategoryId, string>> = {
   pizza: `${P}/pizza.jpg`,
   wings: `${P}/wings.jpg`,
-  shawarma: `${P}/shawarma.jpg`,
   "indian-fusion": `${P}/indian-fusion.jpg`, // curry — thematic flavor cue for the teaser
   panzerotti: `${P}/panzerotti.jpg`,
   sides: `${P}/sides.jpg`,
@@ -31,8 +30,6 @@ const ITEM_CATEGORY_PHOTO: Partial<Record<MenuCategoryId, string>> = {
   "indian-fusion": `${P}/pizza-2.jpg`,
   panzerotti: `${P}/panzerotti.jpg`,
   wings: `${P}/wings.jpg`,
-  shawarma: `${P}/shawarma.jpg`,
-  "family-meals": `${P}/shawarma.jpg`,
   salads: `${P}/salad.jpg`,
   sides: `${P}/sides.jpg`,
   "ice-cream": `${P}/ice-cream.jpg`,
@@ -53,7 +50,6 @@ export function itemPhoto(item: MenuItem): string | undefined {
 export function dealPhoto(deal: Deal): string {
   const s = `${deal.id} ${deal.name}`.toLowerCase();
   if (s.includes("wing")) return `${P}/wings.jpg`;
-  if (s.includes("platter") || s.includes("shawarma")) return `${P}/shawarma.jpg`;
   if (s.includes("fries") || s.includes("messy")) return `${P}/sides.jpg`;
   return `${P}/pizza.jpg`;
 }

@@ -17,7 +17,6 @@ const quickLinks = [
   { label: "Dine-In Pizza", href: "/dine-in-pizza-woodstock" },
   { label: "Local vs. Chains", href: "/pizza-delivery-woodstock-vs-chains" },
   { label: "Chicken Wings", href: "/chicken-wings-woodstock" },
-  { label: "Shawarma", href: "/shawarma-woodstock" },
 ];
 
 const legalLinks = [

@@ -40,7 +40,7 @@ export function Hero() {
             <Badge>⚡ Delivered fast — freshly made to order.</Badge>
           </div>
           <p className="mx-auto mt-5 max-w-xl text-body-lg text-cream/85">
-            Locally owned pizza, baked wings, shawarma & bold Indian-fusion pizzas in
+            Locally owned pizza, baked wings & bold Indian-fusion pizzas in
             Woodstock. {siteConfig.tagline}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">

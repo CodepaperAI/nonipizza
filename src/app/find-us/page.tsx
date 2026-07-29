@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "What's your delivery area?",
-    a: `Free delivery within ${primaryLocation.delivery.radiusKm} km on orders $${primaryLocation.delivery.minSubtotal}+ after ${primaryLocation.delivery.afterTime}. We also offer pickup and dine-in.`,
+    a: `Delivery within ${primaryLocation.delivery.radiusKm} km on orders $${primaryLocation.delivery.minSubtotal}+. We also offer pickup and dine-in.`,
   },
   {
     q: "How can I reach you?",

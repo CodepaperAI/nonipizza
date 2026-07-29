@@ -11,7 +11,6 @@ import { menuCategories } from "@/data/menu";
 const CATEGORY_LINKS: Record<string, string> = {
   pizza: "/menu#pizza",
   wings: "/chicken-wings-woodstock",
-  shawarma: "/shawarma-woodstock",
   "indian-fusion": "/indian-fusion-pizza-woodstock",
   panzerotti: "/menu#panzerotti",
   sides: "/menu#sides",

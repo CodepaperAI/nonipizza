@@ -21,14 +21,14 @@ const PATH = "/dine-in-pizza-woodstock";
 export const metadata = buildMetadata({
   title: "Dine-In Pizza in Woodstock, ON | Noni's Pizza & Wings",
   description:
-    "Dine-in pizza in Woodstock, ON at Noni's Pizza & Wings, 300 Main St, Unit 8. Fresh pizza, wings & shawarma to eat in. Open until 11 PM (2 AM Fri–Sat). Pickup & delivery too.",
+    "Dine-in pizza in Woodstock, ON at Noni's Pizza & Wings, 300 Main St, Unit 8. Fresh pizza, wings & panzerotti to eat in. Open until 11 PM (2 AM Fri–Sat). Pickup & delivery too.",
   path: PATH,
 });
 
 const items = [
   "pizza-woodstock-special",
   "wings-baked",
-  "shawarma-chicken-platter",
+  "panzerotti-large",
   "pizza-butter-chicken",
   "side-poutine",
   "ice-cream-2-scoop",
@@ -43,7 +43,7 @@ const dineInSteps = [
   },
   {
     name: "Grab a table",
-    text: "Seat yourself and browse the menu — pizzas, baked wings, shawarma, sides and Kawartha ice cream.",
+    text: "Seat yourself and browse the menu — pizzas, baked wings, panzerotti, sides and Kawartha ice cream.",
   },
   {
     name: "Order fresh",
@@ -58,7 +58,7 @@ const dineInSteps = [
 const faqs = [
   {
     q: "Does Noni's have dine-in pizza in Woodstock?",
-    a: `Yes — you can dine in at Noni's Pizza & Wings, ${primaryLocation.street}, ${primaryLocation.unit}, Woodstock, ON. Eat fresh pizza, wings and shawarma in-house, or choose pickup or delivery.`,
+    a: `Yes — you can dine in at Noni's Pizza & Wings, ${primaryLocation.street}, ${primaryLocation.unit}, Woodstock, ON. Eat fresh pizza, wings and panzerotti in-house, or choose pickup or delivery.`,
   },
   {
     q: "What are your dine-in hours?",
@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "Is Noni's good for families and groups?",
-    a: "Yes — with party pizzas (21×15 inch, 18 slices), family meals and combo deals, it's an easy spot for families, students and groups.",
+    a: "Yes — with party pizzas (21×15 inch, 18 slices) and combo deals, it's an easy spot for families, students and groups.",
   },
   {
     q: "Can I dine in and order Indian-fusion pizza?",
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "Do you offer pickup and delivery as well as dine-in?",
-    a: "Yes — all three. Free delivery within 3 km on orders over $25 after 3 PM, plus pickup at the counter.",
+    a: "Yes — all three. Delivery within 3 km on orders over $25, plus pickup at the counter.",
   },
   {
     q: "Where exactly are you located?",
@@ -94,7 +94,7 @@ export default function Page() {
           faqJsonLd(faqs),
           howToJsonLd({
             name: "How to dine in at Noni's Pizza & Wings",
-            description: "Dine in on fresh pizza, wings and shawarma in Woodstock.",
+            description: "Dine in on fresh pizza, wings and panzerotti in Woodstock.",
             steps: dineInSteps,
           }),
         ]}
@@ -102,7 +102,7 @@ export default function Page() {
       <PageHero
         eyebrow="Dine-In"
         title="Dine-In Pizza in Woodstock, ON at Noni's Pizza & Wings"
-        lead="Yes — you can dine in at Noni's Pizza & Wings, 300 Main St, Unit 8, Woodstock, ON. Enjoy freshly made pizza, baked wings, shawarma and Kawartha ice cream in-house, or choose pickup or delivery. Open until 11 PM (2 AM Fri–Sat). Call (519) 290-9555 or order online."
+        lead="Yes — you can dine in at Noni's Pizza & Wings, 300 Main St, Unit 8, Woodstock, ON. Enjoy freshly made pizza, baked wings, panzerotti and Kawartha ice cream in-house, or choose pickup or delivery. Open until 11 PM (2 AM Fri–Sat). Call (519) 290-9555 or order online."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Dine-In Pizza", path: PATH },
@@ -116,7 +116,7 @@ export default function Page() {
           {
             heading: "A local spot to sit down and eat in Woodstock",
             body: [
-              "Noni's Pizza & Wings is a locally owned pizza, wings and shawarma restaurant in Woodstock, Ontario. Looking for dine-in pizza restaurants near you? Come eat in on Main Street — fresh pizza, baked wings and loaded shawarma platters, made to order while you relax.",
+              "Noni's Pizza & Wings is a locally owned pizza and wings restaurant in Woodstock, Ontario. Looking for dine-in pizza restaurants near you? Come eat in on Main Street — fresh pizza, baked wings and handcrafted panzerotti, made to order while you relax.",
               "Everything is freshly prepared, never pre-cooked, so what reaches your table is hot and made for you.",
             ],
           },
@@ -134,8 +134,8 @@ export default function Page() {
         heading="Why dine in at Noni's"
         facts={[
           "Freshly prepared, never pre-cooked — made to order at the counter.",
-          "Indian-fusion pizzas, baked wings and shawarma all under one roof.",
-          "Party pizzas, family meals and combo deals for groups.",
+          "Indian-fusion pizzas, baked wings and panzerotti all under one roof.",
+          "Party pizzas and combo deals for groups.",
           "Open late — until 2 AM Friday and Saturday.",
           "Kawartha ice cream (11 flavours) for dessert.",
           "Locally owned on Main Street, Woodstock, with parking nearby.",

@@ -62,7 +62,7 @@ export function PriceTable({
           <Link href="/menu" className="font-bold text-orange underline">
             the full Noni&apos;s menu
           </Link>{" "}
-          for every pizza, wing, shawarma and side.
+          for every pizza, wing and side.
         </p>
       </div>
     </section>

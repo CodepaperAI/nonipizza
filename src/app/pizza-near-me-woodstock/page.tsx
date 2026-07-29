@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "Does Noni's deliver pizza near me?",
-    a: `We do. Free delivery within ${primaryLocation.delivery.radiusKm} km on orders over $${primaryLocation.delivery.minSubtotal} after ${primaryLocation.delivery.afterTime}, plus pickup and dine-in.`,
+    a: `We do. Delivery within ${primaryLocation.delivery.radiusKm} km on orders over $${primaryLocation.delivery.minSubtotal}, plus pickup and dine-in.`,
   },
   {
     q: "What kind of pizza does Noni's make?",
@@ -97,7 +97,7 @@ export default function Page() {
           {
             heading: "Your local pizza place in Woodstock",
             body: [
-              "Noni's Pizza & Wings is a locally owned pizza, wings and shawarma restaurant in Woodstock, Ontario. When people nearby search for pizza places near me or pizza restaurants close to me, they want fresh, hot and fast — not frozen and reheated. That's exactly what we do: freshly prepared, never pre-cooked, made just for you.",
+              "Noni's Pizza & Wings is a locally owned pizza and wings restaurant in Woodstock, Ontario. When people nearby search for pizza places near me or pizza restaurants close to me, they want fresh, hot and fast — not frozen and reheated. That's exactly what we do: freshly prepared, never pre-cooked, made just for you.",
               "You'll find us on Main Street, an easy trip from anywhere in Woodstock whether you're picking up, dining in, or having it delivered to your door.",
             ],
           },
@@ -105,7 +105,7 @@ export default function Page() {
             heading: "Pizza near me — fresh, fast and made your way",
             body: [
               "Choose a specialty pizza like the Woodstock Special or Meat Lover, go bold with an Indian-fusion butter chicken pizza, or build your own with any sauce, crust and up to four toppings (gluten-free crust available).",
-              "Pair it with baked wings or a shawarma platter, then order online in a couple of taps.",
+              "Pair it with baked wings or handcrafted panzerotti, then order online in a couple of taps.",
             ],
           },
         ]}

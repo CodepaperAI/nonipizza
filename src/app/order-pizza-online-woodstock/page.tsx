@@ -21,7 +21,7 @@ const PATH = "/order-pizza-online-woodstock";
 export const metadata = buildMetadata({
   title: "Order Pizza Online in Woodstock | Noni's Pizza & Wings",
   description:
-    "Order pizza online in Woodstock, ON. Build your own or pick a signature or Indian-fusion pizza from Noni's — pickup or free delivery after 3 PM. Fresh, made to order.",
+    "Order pizza online in Woodstock, ON. Build your own or pick a signature or Indian-fusion pizza from Noni's — pickup or local delivery. Fresh, made to order.",
   path: PATH,
 });
 
@@ -51,11 +51,11 @@ const faqs = [
   },
   {
     q: "Is there a minimum for online delivery orders?",
-    a: `Free delivery applies within ${primaryLocation.delivery.radiusKm} km on orders over $${primaryLocation.delivery.minSubtotal} after ${primaryLocation.delivery.afterTime}. Smaller orders and pickup are always available.`,
+    a: `Delivery is available within ${primaryLocation.delivery.radiusKm} km on orders over $${primaryLocation.delivery.minSubtotal}. Smaller orders and pickup are always available.`,
   },
   {
-    q: "Can I add wings, shawarma or dessert to my online order?",
-    a: "Yes — add baked wings, shawarma, sides, drinks and Kawartha ice cream to the same order and check out in one go.",
+    q: "Can I add wings, sides or dessert to my online order?",
+    a: "Yes — add baked wings, panzerotti, sides, drinks and Kawartha ice cream to the same order and check out in one go.",
   },
   {
     q: "Do you take coupon codes online?",
@@ -83,7 +83,7 @@ export default function Page() {
       <PageHero
         eyebrow="Order Online"
         title="Order Pizza Online in Woodstock — Pickup or Delivery"
-        lead="Order pizza online from Noni's Pizza & Wings in Woodstock, ON in just a few taps. Build your own or choose a signature or Indian-fusion pizza, then pick fast pickup at 300 Main St, Unit 8, or free delivery within 3 km on orders over $25 after 3 PM. Call (519) 290-9555."
+        lead="Order pizza online from Noni's Pizza & Wings in Woodstock, ON in just a few taps. Build your own or choose a signature or Indian-fusion pizza, then pick fast pickup at 300 Main St, Unit 8, or local delivery within 3 km on orders over $25. Call (519) 290-9555."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Order Pizza Online", path: PATH },
@@ -97,15 +97,15 @@ export default function Page() {
           {
             heading: "Online pizza ordering, made simple",
             body: [
-              "Noni's Pizza & Wings is a locally owned pizza, wings and shawarma restaurant in Woodstock, Ontario. Skip the phone line: order pizza online and get exactly what you want — pick a specialty or Indian-fusion pizza, or build your own with any crust, sauce and toppings.",
+              "Noni's Pizza & Wings is a locally owned pizza and wings restaurant in Woodstock, Ontario. Skip the phone line: order pizza online and get exactly what you want — pick a specialty or Indian-fusion pizza, or build your own with any crust, sauce and toppings.",
               "Everything is freshly prepared, never pre-cooked, so it's hot and made just for you whether you pick it up or have it delivered.",
             ],
           },
           {
             heading: "Order pizza online near me — pickup or delivery",
             body: [
-              "Choose pickup at 300 Main St, Unit 8, or have it delivered — free within 3 km on orders over $25 after 3 PM.",
-              "Add wings, shawarma, sides or ice cream to the same order and check out once.",
+              "Choose pickup at 300 Main St, Unit 8, or have it delivered within 3 km on orders over $25.",
+              "Add wings, panzerotti, sides or ice cream to the same order and check out once.",
             ],
           },
         ]}

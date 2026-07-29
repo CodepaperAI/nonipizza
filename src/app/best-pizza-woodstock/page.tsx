@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     q: "Can I order the best pizza for delivery?",
-    a: "Yes — order online for delivery or pickup. Free delivery within 3 km on orders over $25 after 3 PM.",
+    a: "Yes — order online for delivery or pickup. Delivery within 3 km on orders over $25.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function Page() {
           {
             heading: "What makes a pizza the best?",
             body: [
-              "Noni's Pizza & Wings is a locally owned pizza, wings and shawarma restaurant in Woodstock, Ontario. We think the best pizza — and the good pizza people search for near them — comes down to one thing: freshness. Everything is freshly prepared, never pre-cooked, and built to order.",
+              "Noni's Pizza & Wings is a locally owned pizza and wings restaurant in Woodstock, Ontario. We think the best pizza — and the good pizza people search for near them — comes down to one thing: freshness. Everything is freshly prepared, never pre-cooked, and built to order.",
               "That means real dough, sauces made in-house, and toppings added the moment you order — not pizzas sitting under a warmer. It's a difference you can taste in every slice.",
             ],
           },
@@ -105,7 +105,7 @@ export default function Page() {
             heading: "Best pizza near me — plus flavours the chains don't have",
             body: [
               "Beyond the classics, Noni's makes Indian-fusion pizzas (butter chicken, tandoori paneer, spicy chicken) that set us apart in Woodstock. Prefer to design your own? Build-your-own gives you any crust, sauce and up to four toppings.",
-              "Pair a pizza with baked wings or a shawarma platter for a full spread.",
+              "Pair a pizza with baked wings or a handcrafted panzerotti for a full spread.",
             ],
           },
         ]}
@@ -118,7 +118,7 @@ export default function Page() {
           "Signature four-topping pizzas and three-topping specialty pizzas.",
           "Unique Indian-fusion pizzas: butter chicken, tandoori paneer, spicy chicken.",
           "Build-your-own with any crust, sauce and toppings — gluten-free available.",
-          "Baked wings, panzerotti, shawarma & Kawartha ice cream round out the menu.",
+          "Baked wings, panzerotti & Kawartha ice cream round out the menu.",
           "Locally owned in Woodstock, Ontario, at fair prices.",
         ]}
       />

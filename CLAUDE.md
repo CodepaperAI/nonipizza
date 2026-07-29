@@ -12,7 +12,7 @@ A production-ready **marketing + online-ordering website** for a real restaurant
 **Noni's Pizza & Wings** in Woodstock, Ontario, Canada. Goals:
 
 1. Look like a bold, appetite-driven fast-food brand (see `DESIGN.md`).
-2. Rank in Google for **local pizza / wings / shawarma search intent** near Woodstock.
+2. Rank in Google for **local pizza / wings / Indian-fusion search intent** near Woodstock.
 3. Drive clicks to the online ordering flow (external URL, configurable).
 
 No backend/database in v1. Menu data lives in typed files. "Order Now" links to a
@@ -39,16 +39,24 @@ Never vary the formatting below.
 - Fri–Sat: 11:00 AM – 2:00 AM (closes 2 AM next day)
 
 **Order options:** Online ordering, Pickup, Delivery, Dine-in.
-**Delivery:** Free delivery within **3 km** on orders **$25+ after 3:00 PM**.
+**Delivery:** Delivery within **3 km** on orders **$25+** (standard paid delivery).
 
 **Everyday specials**
 - Seniors save 10% Mon–Thu
 - Happy Hour 2–5 PM daily (10% off $25+)
-- Free delivery after 3 PM (3 km, $25+ min)
+
+> **Discontinued — do NOT re-add (future sessions):**
+> - **Shawarma** (platters, wraps, sandwiches, combos) and the shawarma-based **Family
+>   Meals** are discontinued. The `/shawarma-woodstock` landing page, the Shawarma menu
+>   category, the Family Meals category, the shawarma coupons and `shawarmaSaucesAndToppings`
+>   were all removed. The **"Chicken Shawarma Pizza"** signature *pizza* is a topping flavour
+>   and **stays**. Do not recreate a shawarma page/category or list Shawarma in `servesCuisine`.
+> - **Free delivery after 3 PM** is discontinued. Delivery is now standard/paid within 3 km on
+>   $25+ orders — never describe delivery as "free" or tie it to "after 3 PM".
 
 **Positioning:** Locally owned, proud to serve the Canadian community. Known for
 **Indian-fusion pizzas** (butter chicken, tandoori paneer, spicy chicken/paneer),
-**baked chicken wings** (healthier than fried), custom pizza & panzerotti, shawarma,
+**baked chicken wings** (healthier than fried), custom pizza & panzerotti,
 and Kawartha ice cream.
 
 **Target audiences (write copy for these):** South Asian / Indian diaspora wanting
@@ -115,8 +123,7 @@ exclusive of HST, subject to change.
     │   ├── order-pizza-online-woodstock/page.tsx
     │   ├── pizza-delivery-woodstock/page.tsx
     │   ├── indian-fusion-pizza-woodstock/page.tsx
-    │   ├── chicken-wings-woodstock/page.tsx
-    │   └── shawarma-woodstock/page.tsx
+    │   └── chicken-wings-woodstock/page.tsx
     ├── components/               # NavBar, Hero, CategoryCarousel, MenuSection, ...
     ├── data/
     │   ├── menu.ts               # full typed menu
@@ -151,8 +158,6 @@ exclusive of HST, subject to change.
 
 Full menu is encoded in `src/data/menu.ts` as typed objects. Categories:
 
-- **Shawarma** — Platters, Wraps, Sandwiches (S/L), Combos
-- **Family Meals**
 - **Salads** (S/L)
 - **Pizzas** — Specialty (3 topping), Signature (4 topping), Indian Fusion,
   Veggie Fans, Create Your Own, Hip Hip Hooray Party Pizza
@@ -164,7 +169,6 @@ Full menu is encoded in `src/data/menu.ts` as typed objects. Categories:
 - **Desserts**
 - **Kawartha Ice Cream**
 - **Drinks**
-- **Shawarma Sauces & Toppings**
 
 Coupon deals live in `src/data/deals.ts` (each has a code, e.g. `010425`).
 Prices are CAD, exclusive of HST. Pizza sizes: Small 10" / Medium 12" / Large 14" /
@@ -195,7 +199,6 @@ issues and still captures the real intent.
 | `/pizza-delivery-woodstock` | "pizza delivery close to me", "takeaway delivery near me" |
 | `/indian-fusion-pizza-woodstock` | butter chicken / tandoori pizza — **key differentiator, make it strong** |
 | `/chicken-wings-woodstock` | baked wings |
-| `/shawarma-woodstock` | shawarma platters/wraps |
 | `/find-us` | location, hours, map, directions — LocalBusiness + FAQPage schema |
 | `/reviews` | testimonials — Review/AggregateRating schema **only if real reviews supplied**, else clearly labeled placeholder |
 
@@ -206,7 +209,7 @@ what makes Noni's different) — **no keyword stuffing, no thin doorway pages.**
 ### Technical SEO
 - Per-page metadata: title ≤ ~60 chars, description ≤ ~155, canonical, Open Graph + Twitter.
 - Root layout JSON-LD: Restaurant/LocalBusiness with NAP, geo, `openingHoursSpecification`,
-  `servesCuisine` (Pizza, Wings, Shawarma, Indian), `priceRange "$$"`, `hasMenu`.
+  `servesCuisine` (Pizza, Wings, Indian), `priceRange "$$"`, `hasMenu`.
 - BreadcrumbList + FAQPage where relevant.
 - `sitemap.xml`, `robots.txt`, clean heading hierarchy, descriptive alt text, fast LCP hero.
 - Mobile-first responsive.
@@ -256,7 +259,7 @@ Consolidated to avoid keyword cannibalization. **Do not create duplicates of the
 | `/dine-in-pizza-woodstock` | dine in pizza restaurants near me | dine-in pizza Woodstock |
 | `/pizza-delivery-woodstock-vs-chains` | *(intent behind)* pizza hut / domino's near me / delivers / closest | reframed → local delivery + neutral comparison |
 
-Existing `/`, `/menu`, `/deals`, `/chicken-wings-woodstock`, `/shawarma-woodstock`,
+Existing `/`, `/menu`, `/deals`, `/chicken-wings-woodstock`,
 `/find-us`, `/reviews` stay and cross-link into this cluster.
 
 ### Per-page template (apply to every cluster landing page, in this order)
@@ -268,15 +271,15 @@ Existing `/`, `/menu`, `/deals`, `/chicken-wings-woodstock`, `/shawarma-woodstoc
 3. **Order CTA** — filled orange "Order Now" (`NEXT_PUBLIC_ORDER_URL`) + phone
    **(519) 290-9555**.
 4. **Intro / value** — 2–3 short paragraphs, keyword + variants woven naturally. State the
-   entity for GEO: *"Noni's Pizza & Wings is a locally owned pizza, wings and shawarma
+   entity for GEO: *"Noni's Pizza & Wings is a locally owned pizza and wings
    restaurant in Woodstock, Ontario."*
 5. **Why Noni's** — bulleted concrete, quotable differentiators (freshly prepared never
    pre-cooked; Indian-fusion pizzas; baked wings; custom pizza & panzerotti; Kawartha ice
    cream; locally owned).
 6. **Menu highlights + price `<table>`** — 4–8 relevant items with prices; link to `/menu`.
 7. **How to order (HowTo)** — numbered steps, marked up with **HowTo JSON-LD**.
-8. **Delivery / hours facts** — address, hours per day, 3 km radius, $25 after-3 PM
-   threshold, phone. Identical to NAP everywhere.
+8. **Delivery / hours facts** — address, hours per day, 3 km radius, $25 minimum,
+   phone. Identical to NAP everywhere.
 9. **FAQ (AEO + GEO core)** — 5–8 voice-style question headings; each answer self-contained
    1–3 sentences. Marked up with **FAQPage JSON-LD**.
 10. **Internal links** — to the other cluster pages + `/menu` + `/deals`, descriptive anchors.

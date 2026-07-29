@@ -123,7 +123,7 @@ Sticky, floating **maroon rounded pill bar** over the hero. Layout:
 - Horizontal scroll row of **tall category cards** that bleed off both edges.
 - Each card: food image, **4px colored rounded border** (rotating accent), bold uppercase
   label at bottom on a translucent maroon strip.
-- Labels: `PIZZAS · WINGS · SHAWARMA · INDIAN FUSION · PANZEROTTI · SIDES · ICE CREAM`.
+- Labels: `PIZZAS · WINGS · INDIAN FUSION · PANZEROTTI · SIDES · ICE CREAM`.
 - Each links to the relevant menu section / landing page.
 - Snap scrolling; hides scrollbar. On desktop shows ~5.5 cards, mobile ~1.5.
 
@@ -131,7 +131,7 @@ Sticky, floating **maroon rounded pill bar** over the hero. Layout:
 - **Cream background.**
 - Centered `Pill` "Menu", big `display-xl` heading "PICK YOUR CRAVING", subtitle
   "Every bite hits different. Choose your category and feast."
-- `FilterPills` row: `HOT SELLING · PIZZA · WINGS · SHAWARMA · INDIAN FUSION · SALADS · SIDES`.
+- `FilterPills` row: `HOT SELLING · PIZZA · WINGS · INDIAN FUSION · SALADS · SIDES`.
   Active pill filled **yellow**. Client-side filter (`"use client"`).
 - Grid of **3-across `ProductCard`** (white, `rounded-3xl`): image top, bold name,
   gray truncated (2-line) description, **big orange price bottom-left**, maroon
@@ -153,7 +153,7 @@ White card, `rounded-3xl`, soft shadow. Structure:
 
 ### PromoStrip
 - Bold **yellow band**, full-width, with flying-food imagery. Big display headline for a
-  current promo (e.g. free/intro shawarma offer or first-order incentive), maroon text,
+  current promo (e.g. Happy Hour or a first-order incentive), maroon text,
   filled maroon CTA.
 
 ### DealsSection ("COMBOS THAT MAKE SENSE")
@@ -196,8 +196,7 @@ nav → every menu category rendered as titled `ProductCard`/price-list groups �
 Hero → everyday deals grid → coupon `DealCard` grid (with codes) → fine print → Footer.
 
 ### Local landing pages (`/pizza-near-me-woodstock`, `/order-pizza-online-woodstock`,
-`/pizza-delivery-woodstock`, `/indian-fusion-pizza-woodstock`, `/chicken-wings-woodstock`,
-`/shawarma-woodstock`)
+`/pizza-delivery-woodstock`, `/indian-fusion-pizza-woodstock`, `/chicken-wings-woodstock`)
 Shared template: maroon hero with **unique H1** containing the keyword → lead paragraph
 (keyword in first sentence) → 2–3 content sections (one subheading contains the keyword)
 with genuine local detail → relevant `ProductCard` preview pulled from menu data →
@@ -206,7 +205,7 @@ FAQ block (FAQPage schema) → internal links to `/menu` + `/order-pizza-online-
 
 ### `/find-us`
 Hero → address / phones / hours cards → embedded map → directions/parking → delivery-area
-note (3 km, $25+, after 3 PM) → FAQ (FAQPage schema) → Footer. LocalBusiness schema.
+note (3 km, $25+) → FAQ (FAQPage schema) → Footer. LocalBusiness schema.
 
 ### `/reviews`
 Hero → clearly-labeled placeholder testimonials (no fake AggregateRating schema until real

@@ -8,7 +8,7 @@ import { breadcrumbJsonLd } from "@/lib/jsonld";
 export const metadata = buildMetadata({
   title: "Reviews | Noni's Pizza & Wings, Woodstock",
   description:
-    "What Woodstock is saying about Noni's Pizza & Wings — Indian-fusion pizzas, baked wings and shawarma. Sample testimonials shown; real reviews coming soon.",
+    "What Woodstock is saying about Noni's Pizza & Wings — Indian-fusion pizzas and baked wings. Sample testimonials shown; real reviews coming soon.",
   path: "/reviews",
 });
 
@@ -32,9 +32,9 @@ const placeholders = [
   },
   {
     quote:
-      "Huge shawarma platter with all the sides and fresh pita. Fed two of us easily. Great value.",
+      "Built my own pizza exactly how I like it — thin crust, tandoori base, loaded with paneer. Fresh, hot and better than the chains.",
     name: "Sample Customer",
-    detail: "Shawarma Platter",
+    detail: "Create Your Own Pizza",
   },
   {
     quote:

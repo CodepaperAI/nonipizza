@@ -13,14 +13,13 @@ import {
   createYourOwnOptions,
   wingSauces,
   iceCreamFlavors,
-  shawarmaSaucesAndToppings,
   type MenuItem,
 } from "@/data/menu";
 
 export const metadata = buildMetadata({
   title: "Pizza Menu in Woodstock | Noni's Pizza & Wings",
   description:
-    "The full Noni's menu: specialty & Indian-fusion pizzas, baked wings, shawarma, panzerotti, sides, Kawartha ice cream & more. Order online in Woodstock, ON.",
+    "The full Noni's menu: specialty & Indian-fusion pizzas, baked wings, panzerotti, sides, Kawartha ice cream & more. Order online in Woodstock, ON.",
   path: "/menu",
 });
 
@@ -85,7 +84,7 @@ export default function MenuPage() {
       <PageHero
         eyebrow="Menu"
         title="Pizza Menu in Woodstock"
-        lead="Freshly prepared, never pre-cooked. Browse every pizza, wing, shawarma and side — then order online for pickup or delivery across Woodstock, ON."
+        lead="Freshly prepared, never pre-cooked. Browse every pizza, wing, panzerotti and side — then order online for pickup or delivery across Woodstock, ON."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Menu", path: "/menu" },
@@ -158,18 +157,6 @@ export default function MenuPage() {
                   <span className="font-bold text-maroon">Flavours:</span>{" "}
                   {iceCreamFlavors.join(", ")}. Waffle cone +$1.00.
                 </p>
-              )}
-              {cat.id === "shawarma" && (
-                <div className="mt-4 grid gap-2 text-sm text-muted sm:grid-cols-2">
-                  <p>
-                    <span className="font-bold text-maroon">Sauces:</span>{" "}
-                    {shawarmaSaucesAndToppings.sauces.join(", ")}.
-                  </p>
-                  <p>
-                    <span className="font-bold text-maroon">Toppings:</span>{" "}
-                    {shawarmaSaucesAndToppings.toppings.join(", ")}.
-                  </p>
-                </div>
               )}
             </section>
           );

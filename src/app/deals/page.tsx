@@ -9,7 +9,7 @@ import { couponDeals, everydayDeals, everydaySpecials } from "@/data/deals";
 export const metadata = buildMetadata({
   title: "Pizza Deals & Coupons in Woodstock | Noni's",
   description:
-    "Save on pizza, wings & shawarma in Woodstock. Everyday combo deals, family feasts and coupon codes from Noni's Pizza & Wings. Order online for pickup or delivery.",
+    "Save on pizza, wings & combos in Woodstock. Everyday combo deals, family feasts and coupon codes from Noni's Pizza & Wings. Order online for pickup or delivery.",
   path: "/deals",
 });
 
@@ -25,7 +25,7 @@ export default function DealsPage() {
       <PageHero
         eyebrow="Deals"
         title="Deals & Coupons in Woodstock"
-        lead="Stack your favorites and save big. Everyday combo deals plus coupon codes on pizza, wings and shawarma — freshly made to order and ready for pickup or delivery."
+        lead="Stack your favorites and save big. Everyday combo deals plus coupon codes on pizza, wings and family feasts — freshly made to order and ready for pickup or delivery."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Deals", path: "/deals" },
@@ -69,8 +69,8 @@ export default function DealsPage() {
             ))}
           </div>
           <p className="mt-6 text-xs text-muted">
-            Prices in CAD, exclusive of HST and subject to change. Free delivery within 3 km on
-            orders $25+ after 3:00 PM.
+            Prices in CAD, exclusive of HST and subject to change. Delivery within 3 km on
+            orders $25+.
           </p>
         </div>
       </section>

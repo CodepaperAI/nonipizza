@@ -23,7 +23,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "Noni's Pizza & Wings | Pizza, Wings & Shawarma in Woodstock, ON",
+    default: "Noni's Pizza & Wings | Pizza, Wings & Indian Fusion in Woodstock, ON",
     template: "%s | Noni's Pizza & Wings",
   },
   description: siteConfig.shortDescription,
@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     "pizza Woodstock",
     "pizza near me Woodstock",
     "wings Woodstock",
-    "shawarma Woodstock",
     "Indian fusion pizza",
     "butter chicken pizza",
     "pizza delivery Woodstock",

@@ -40,7 +40,6 @@ export interface RestaurantLocation {
   delivery: {
     radiusKm: number;
     minSubtotal: number;
-    afterTime: string; // human label
     note: string;
   };
   /** Google Maps embed query string (address, URL-encoded at use site). */
@@ -76,8 +75,7 @@ export const primaryLocation: RestaurantLocation = {
   delivery: {
     radiusKm: 3,
     minSubtotal: 25,
-    afterTime: "3:00 PM",
-    note: "Free delivery within 3 km on orders $25+ after 3:00 PM.",
+    note: "Delivery within 3 km on orders $25+.",
   },
   mapQuery: "300 Main St Unit 8, Woodstock, ON N4S 1T3, Canada",
 };

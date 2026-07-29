@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata = buildMetadata({
   title: "Noni's Pizza & Wings | Pizza in Woodstock, ON",
   description:
-    "Locally owned pizza, baked wings, shawarma & Indian-fusion pizzas in Woodstock, ON. Order online for pickup or free delivery after 3 PM.",
+    "Locally owned pizza, baked wings & Indian-fusion pizzas in Woodstock, ON. Order online for pickup, delivery or dine-in.",
   path: "/",
 });
 

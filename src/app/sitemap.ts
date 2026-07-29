@@ -16,11 +16,10 @@ const routes = [
   "/dine-in-pizza-woodstock",
   "/pizza-delivery-woodstock-vs-chains",
   "/chicken-wings-woodstock",
-  "/shawarma-woodstock",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-07-21");
+  const lastModified = new Date("2026-07-29");
   return routes.map((path) => ({
     url: new URL(path, siteConfig.siteUrl).toString(),
     lastModified,

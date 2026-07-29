@@ -8,8 +8,6 @@
  */
 
 export type MenuCategoryId =
-  | "shawarma"
-  | "family-meals"
   | "salads"
   | "pizza"
   | "indian-fusion"
@@ -60,7 +58,6 @@ export interface MenuCategoryMeta {
 export const menuCategories: MenuCategoryMeta[] = [
   { id: "pizza", label: "Pizzas", blurb: "Specialty, signature & build-your-own — freshly made to order.", image: "/images/category-pizza.svg", accent: "orange" },
   { id: "wings", label: "Wings", blurb: "Baked or deep-fried, 9 sauces, 1–4 LB.", image: "/images/category-wings.svg", accent: "yellow" },
-  { id: "shawarma", label: "Shawarma", blurb: "Platters, wraps, sandwiches & combos.", image: "/images/category-shawarma.svg", accent: "sky" },
   { id: "indian-fusion", label: "Indian Fusion", blurb: "Butter chicken, tandoori & spicy paneer pizzas.", image: "/images/category-indian-fusion.svg", accent: "pink" },
   { id: "panzerotti", label: "Panzerotti", blurb: "Handcrafted, baked or deep-fried, 4 toppings.", image: "/images/category-panzerotti.svg", accent: "red" },
   { id: "sides", label: "Sides", blurb: "Fries, poutine, garlic fingers, samosas & more.", image: "/images/category-sides.svg", accent: "orange" },
@@ -74,8 +71,6 @@ export const menuPageOrder: { id: MenuCategoryId; label: string }[] = [
   { id: "wings", label: "Chicken Wings" },
   { id: "panzerotti", label: "Panzerotti" },
   { id: "deals", label: "Everyday Deals" },
-  { id: "shawarma", label: "Shawarma" },
-  { id: "family-meals", label: "Family Meals" },
   { id: "salads", label: "Salads" },
   { id: "sides", label: "Side Orders" },
   { id: "dips", label: "Dipping Sauces" },
@@ -99,27 +94,6 @@ const SL = (s: number, l: number): PriceVariant[] => [
 const ONE = (price: number, label = ""): PriceVariant[] => [{ label, price }];
 
 export const menuItems: MenuItem[] = [
-  // ────────────────────────────── SHAWARMA ──────────────────────────────
-  { id: "shawarma-chicken-platter", name: "Chicken Shawarma Platter", category: "shawarma", group: "Platters (Large)", featured: true, image: "/images/shawarma-chicken-platter.svg", variants: ONE(16.99), description: "Marinated chicken on rice with garlic sauce, hummus, fresh salad, pickles, turnip, garlic potatoes & freshly baked pita." },
-  { id: "shawarma-donair-platter", name: "Donair Platter", category: "shawarma", group: "Platters (Large)", image: "/images/shawarma-donair-platter.svg", variants: ONE(16.99), description: "Tender donair meat on rice with garlic sauce, hummus, salad, pickles, turnip, garlic potatoes & pita." },
-  { id: "shawarma-falafel-platter", name: "Falafel Platter", category: "shawarma", group: "Platters (Large)", image: "/images/shawarma-falafel-platter.svg", variants: ONE(14.99), description: "Protein-packed falafel on rice with the same fresh sides & pita." },
-
-  { id: "wrap-chicken-ranch", name: "Chicken Ranch Wrap", category: "shawarma", group: "Wraps (Large)", image: "/images/wrap-chicken-ranch.svg", variants: ONE(13.99), description: "Ranch dressing, melted cheese, lettuce & fresh tomatoes." },
-  { id: "wrap-chicken-caesar", name: "Chicken Caesar Wrap", category: "shawarma", group: "Wraps (Large)", image: "/images/wrap-chicken-caesar.svg", variants: ONE(13.99), description: "Caesar dressing, crispy bacon, melted cheese, parmesan & romaine." },
-  { id: "wrap-chicken-club", name: "Chicken Club Wrap", category: "shawarma", group: "Wraps (Large)", image: "/images/wrap-chicken-club.svg", variants: ONE(13.99), description: "Mayo, crispy bacon strips, melted cheese & fresh tomatoes." },
-
-  { id: "sandwich-chicken", name: "Chicken Shawarma Sandwich", category: "shawarma", group: "Sandwiches", featured: true, image: "/images/sandwich-chicken.svg", variants: SL(8.99, 12.99) },
-  { id: "sandwich-donair", name: "Donair Shawarma Sandwich", category: "shawarma", group: "Sandwiches", image: "/images/sandwich-donair.svg", variants: SL(8.99, 12.99) },
-  { id: "sandwich-falafel", name: "Falafel Shawarma Sandwich", category: "shawarma", group: "Sandwiches", image: "/images/sandwich-falafel.svg", variants: SL(7.99, 11.99) },
-
-  { id: "combo-chicken", name: "Chicken Shawarma Combo", category: "shawarma", group: "Combos", image: "/images/combo-chicken.svg", variants: ONE(15.99), description: "With crispy fries, gravy & pop." },
-  { id: "combo-donair", name: "Donair Combo", category: "shawarma", group: "Combos", image: "/images/combo-donair.svg", variants: ONE(15.99), description: "With crispy fries, gravy & pop." },
-  { id: "combo-falafel", name: "Falafel Combo", category: "shawarma", group: "Combos", image: "/images/combo-falafel.svg", variants: ONE(15.99), description: "With crispy fries, gravy & pop." },
-
-  // ──────────────────────────── FAMILY MEALS ────────────────────────────
-  { id: "family-meal", name: "Family Meal", category: "family-meals", image: "/images/family-meal.svg", variants: ONE(51.99), description: "Marinated chicken OR donair platter with garlic sauce, hummus, salad, turnip, pickles, garlic potatoes, pita, rice & 2L pop." },
-  { id: "family-meal-mixed", name: "Family Meal – Mixed", category: "family-meals", image: "/images/family-meal-mixed.svg", variants: ONE(55.99), description: "Chicken + donair platter with all the same sides." },
-
   // ─────────────────────────────── SALADS ───────────────────────────────
   { id: "salad-caesar", name: "Caesar Salad", category: "salads", image: "/images/salad-caesar.svg", variants: SL(8.99, 10.99), description: "Romaine, croutons, bacon, parmesan & caesar dressing." },
   { id: "salad-greek", name: "Greek Salad", category: "salads", image: "/images/salad-greek.svg", variants: SL(8.99, 10.99), description: "Romaine, mixed veg, black olives, feta & greek dressing." },
@@ -228,11 +202,6 @@ export const createYourOwnOptions = {
 export const wingSauces = ["Mild", "Medium & Hot", "Honey Garlic", "BBQ", "Sweet Thai", "Buffalo", "Suicide", "Fire & Ice", "Blue Cheese"] as const;
 
 export const iceCreamFlavors = ["Vanilla", "Butterscotch Ripple", "Rum & Raisin", "Cotton Candy", "Mango", "Pistachio Almond", "Salty Caramel", "Choc Chip Cookie Dough", "Death by Chocolate", "Cookies & Cream", "Lactose Free Vanilla"] as const;
-
-export const shawarmaSaucesAndToppings = {
-  sauces: ["Homemade Garlic", "Spicy Garlic", "Donair (sweet)", "Hummus", "Tahini", "Hot Sauce"],
-  toppings: ["Lettuce", "Tomato", "Turnip", "Pickle", "Sumac White Onion", "Red Onion", "Hot Pepper"],
-} as const;
 
 // ─────────────────────────────── Helpers ───────────────────────────────
 

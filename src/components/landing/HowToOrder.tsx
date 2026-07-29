@@ -8,7 +8,7 @@ const phone = primaryLocation.phones[0];
 export const DEFAULT_ORDER_STEPS = [
   {
     name: "Browse the menu",
-    text: "Open the online menu and pick your pizzas, wings, shawarma or sides — or build your own pizza with any crust, sauce and toppings.",
+    text: "Open the online menu and pick your pizzas, wings, panzerotti or sides — or build your own pizza with any crust, sauce and toppings.",
   },
   {
     name: "Add to cart",
@@ -16,7 +16,7 @@ export const DEFAULT_ORDER_STEPS = [
   },
   {
     name: "Choose pickup or delivery",
-    text: "Select pickup at 300 Main St, Unit 8, Woodstock, or delivery to your address. Free delivery within 3 km on orders over $25 after 3 PM.",
+    text: "Select pickup at 300 Main St, Unit 8, Woodstock, or delivery to your address. Delivery within 3 km on orders over $25.",
   },
   {
     name: "Check out",
