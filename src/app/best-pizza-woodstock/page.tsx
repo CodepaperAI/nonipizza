@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: "Where can I find good pizza near me in Woodstock?",
-    a: `Noni's Pizza & Wings is at ${primaryLocation.street}, ${primaryLocation.unit}, Woodstock, ON — open until 11 PM (2 AM Fri–Sat) for pickup, dine-in and delivery.`,
+    a: `Noni's Pizza & Wings is at ${primaryLocation.street}, ${primaryLocation.unit}, Woodstock, ON — open 11 AM to 9 PM Sunday to Thursday and 11 AM to 11 PM Friday and Saturday for pickup, dine-in and delivery.`,
   },
   {
     q: "Does the best pizza cost more?",
@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     q: "Can I order the best pizza for delivery?",
-    a: "Yes — order online for delivery or pickup. Delivery within 3 km on orders over $25.",
+    a: "Yes — order online for delivery across Woodstock, or choose pickup at 300 Main St, Unit 8.",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function Page() {
       <PageHero
         eyebrow="Best Pizza"
         title="The Best Pizza in Woodstock, ON — Freshly Made, Never Pre-Cooked"
-        lead="Noni's Pizza & Wings makes some of the best pizza in Woodstock, ON — freshly prepared and never pre-cooked, from signature and Indian-fusion pizzas to fully custom build-your-own. Locally owned, made to order for pickup, dine-in or delivery. Open until 11 PM (2 AM Fri–Sat). Order online or call (519) 290-9555."
+        lead="Noni's Pizza & Wings makes some of the best pizza in Woodstock, ON — freshly prepared and never pre-cooked, from signature and Indian-fusion pizzas to fully custom build-your-own. Locally owned, made to order for pickup, dine-in or delivery. Open 11 AM–9 PM Sun–Thu and 11 AM–11 PM Fri–Sat. Order online or call (519) 290-9555."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Best Pizza", path: PATH },
@@ -104,7 +104,7 @@ export default function Page() {
           {
             heading: "Best pizza near me — plus flavours the chains don't have",
             body: [
-              "Beyond the classics, Noni's makes Indian-fusion pizzas (butter chicken, tandoori paneer, spicy chicken) that set us apart in Woodstock. Prefer to design your own? Build-your-own gives you any crust, sauce and up to four toppings.",
+              "Beyond the classics, Noni's makes Indian-fusion pizzas (butter chicken, tandoori paneer, spicy chicken) that set us apart in Woodstock. Prefer to design your own? Build-your-own gives you any crust, sauce and your choice of toppings.",
               "Pair a pizza with baked wings or a handcrafted panzerotti for a full spread.",
             ],
           },

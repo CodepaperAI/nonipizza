@@ -118,12 +118,13 @@ export const menuItems: MenuItem[] = [
   { id: "pizza-nonis-special", name: "Noni's Special", category: "pizza", group: "Signature Pizzas", tags: ["4 toppings"], image: "/images/pizza-nonis-special.svg", variants: SIZES4(15.99, 18.99, 20.99, 23.99), description: "Pepperoni, bacon strips, mushrooms & red onions." },
 
   // ──────────────────────── INDIAN FUSION PIZZAS ────────────────────────
-  { id: "pizza-butter-chicken", name: "Butter Chicken Pizza", category: "indian-fusion", tags: ["FREE 1 dipping + 1 pop"], featured: true, image: "/images/pizza-butter-chicken.svg", variants: SIZES4(14.99, 17.99, 19.99, 22.99), description: "Creamy butter chicken base topped with tender chicken." },
-  { id: "pizza-butter-paneer", name: "Butter Paneer Pizza", category: "indian-fusion", tags: ["FREE 1 dipping + 1 pop", "vegetarian"], image: "/images/pizza-butter-paneer.svg", variants: SIZES4(14.99, 17.99, 19.99, 22.99), description: "Butter paneer base topped with paneer." },
-  { id: "pizza-tandoori-chicken", name: "Tandoori Chicken Pizza", category: "indian-fusion", tags: ["FREE 1 dipping + 1 pop"], featured: true, image: "/images/pizza-tandoori-chicken.svg", variants: SIZES4(16.99, 19.99, 22.99, 25.99), description: "Tandoori base, chicken, red onions & green peppers." },
-  { id: "pizza-tandoori-paneer", name: "Tandoori Paneer Pizza", category: "indian-fusion", tags: ["FREE 1 dipping + 1 pop", "vegetarian"], image: "/images/pizza-tandoori-paneer.svg", variants: SIZES4(16.99, 19.99, 22.99, 25.99), description: "Tandoori base, paneer, red onions & green peppers." },
-  { id: "pizza-spicy-chicken", name: "Spicy Chicken Pizza", category: "indian-fusion", tags: ["FREE 1 dipping + 1 pop"], isNew: true, image: "/images/pizza-spicy-chicken.svg", variants: SIZES4(16.99, 19.99, 22.99, 25.99), description: "Spicy base, chicken, red onions, jalapenos, cilantro & green peppers." },
-  { id: "pizza-spicy-paneer", name: "Spicy Paneer Pizza", category: "indian-fusion", tags: ["FREE 1 dipping + 1 pop", "vegetarian"], isNew: true, image: "/images/pizza-spicy-paneer.svg", variants: SIZES4(16.99, 19.99, 22.99, 25.99), description: "Spicy base, paneer, red onions, jalapenos, cilantro & green peppers." },
+  // No "FREE 1 dipping + 1 pop" perk — discontinued per client review, do not re-add.
+  { id: "pizza-butter-chicken", name: "Butter Chicken Pizza", category: "indian-fusion", featured: true, image: "/images/pizza-butter-chicken.svg", variants: SIZES4(14.99, 17.99, 19.99, 22.99), description: "Creamy butter chicken base topped with tender chicken." },
+  { id: "pizza-butter-paneer", name: "Butter Paneer Pizza", category: "indian-fusion", tags: ["vegetarian"], image: "/images/pizza-butter-paneer.svg", variants: SIZES4(14.99, 17.99, 19.99, 22.99), description: "Butter paneer base topped with paneer." },
+  { id: "pizza-tandoori-chicken", name: "Tandoori Chicken Pizza", category: "indian-fusion", featured: true, image: "/images/pizza-tandoori-chicken.svg", variants: SIZES4(16.99, 19.99, 22.99, 25.99), description: "Tandoori base, chicken, red onions & green peppers." },
+  { id: "pizza-tandoori-paneer", name: "Tandoori Paneer Pizza", category: "indian-fusion", tags: ["vegetarian"], image: "/images/pizza-tandoori-paneer.svg", variants: SIZES4(16.99, 19.99, 22.99, 25.99), description: "Tandoori base, paneer, red onions & green peppers." },
+  { id: "pizza-spicy-chicken", name: "Spicy Chicken Pizza", category: "indian-fusion", isNew: true, image: "/images/pizza-spicy-chicken.svg", variants: SIZES4(16.99, 19.99, 22.99, 25.99), description: "Spicy base, chicken, red onions, jalapenos, cilantro & green peppers." },
+  { id: "pizza-spicy-paneer", name: "Spicy Paneer Pizza", category: "indian-fusion", tags: ["vegetarian"], isNew: true, image: "/images/pizza-spicy-paneer.svg", variants: SIZES4(16.99, 19.99, 22.99, 25.99), description: "Spicy base, paneer, red onions, jalapenos, cilantro & green peppers." },
 
   // ──────────────────────── VEGGIE FANS PIZZAS ─────────────────────────
   { id: "pizza-garden", name: "Garden Pizza", category: "pizza", group: "Veggie Fans Pizzas", tags: ["vegetarian", "sauce & mozzarella"], image: "/images/pizza-garden.svg", variants: SIZES4(14.99, 17.99, 19.99, 22.99), description: "Mushrooms, red onions, green peppers & tomatoes." },
@@ -131,7 +132,7 @@ export const menuItems: MenuItem[] = [
   { id: "pizza-3-cheese", name: "3 Cheese Pizza", category: "pizza", group: "Veggie Fans Pizzas", tags: ["vegetarian"], image: "/images/pizza-3-cheese.svg", variants: SIZES4(14.99, 17.99, 19.99, 22.99), description: "Cheddar, feta & mozzarella." },
 
   // ─────────────────────── CREATE YOUR OWN PIZZA ───────────────────────
-  { id: "pizza-create-your-own", name: "Create Your Own Pizza", category: "pizza", group: "Create Your Own", tags: ["4 toppings", "any sauce & crust"], featured: true, image: "/images/pizza-create-your-own.svg", variants: SIZES4(8.99, 10.99, 13.99, 16.99), description: "Build it your way — 4 toppings, any sauce & crust. Crusts: Traditional, Thin, Thick, Gluten-Free (Medium only +$2.49). Extra topping S $1 / M $1.49 / L $1.99 / XL $2.49 / Party $3." },
+  { id: "pizza-create-your-own", name: "Create Your Own Pizza", category: "pizza", group: "Create Your Own", tags: ["toppings", "any sauce & crust"], featured: true, image: "/images/pizza-create-your-own.svg", variants: SIZES4(8.99, 10.99, 13.99, 16.99), description: "Build it your way — choose your toppings, any sauce & crust. Crusts: Traditional, Thin, Thick, Gluten-Free (Medium only, +$2.49). Extra topping: S $1 / M $1.49 / L $1.99 / XL $2.49 / Party $3." },
 
   // ─────────────────── HIP HIP HOORAY PARTY PIZZA ──────────────────────
   { id: "party-pizza-1", name: "Party Pizza — 1 Topping", category: "pizza", group: "Hip Hip Hooray Party Pizza", tags: ['21"×15"', "18 slices", "2 dippings free"], image: "/images/party-pizza.svg", variants: ONE(26.99), description: "Giant 21\"×15\" party pizza, 18 slices — 1 topping + 2 dippings free." },
@@ -165,7 +166,9 @@ export const menuItems: MenuItem[] = [
   { id: "side-breaded-mushroom", name: "Breaded Fried Mushroom", category: "sides", image: "/images/side-breaded-mushroom.svg", variants: ONE(8.99) },
   { id: "side-chicken-fingers-fries", name: "Chicken Fingers + Fries", category: "sides", image: "/images/side-chicken-fingers.svg", variants: ONE(12.99) },
   { id: "side-fish-chips", name: "Fish & Chips", category: "sides", image: "/images/side-fish-chips.svg", variants: ONE(14.99) },
-  { id: "side-mozzarella-sticks", name: "Mozzarella Sticks", category: "sides", image: "/images/side-mozzarella-sticks.svg", variants: [{ label: "Small", price: 8.49 }, { label: "Large", price: 13.99 }] },
+  // Priced by piece count, not size — client correction.
+  { id: "side-mozzarella-sticks", name: "Mozzarella Sticks", category: "sides", image: "/images/side-mozzarella-sticks.svg", variants: [{ label: "5 pcs", price: 8.49 }, { label: "10 pcs", price: 13.99 }] },
+  { id: "side-jalapeno-poppers", name: "Jalapeño Poppers", category: "sides", isNew: true, image: "/images/side-jalapeno-poppers.svg", description: "Crispy breaded jalapeño poppers with a creamy centre, served hot.", variants: [{ label: "5 pcs", price: 8.49 }, { label: "10 pcs", price: 13.99 }] },
   { id: "side-fried-pickle-spears", name: "Fried Pickle Spears", category: "sides", image: "/images/side-fried-pickle-spears.svg", variants: [{ label: "Small", price: 7.99 }, { label: "Large", price: 13.99 }] },
 
   // ───────────────────────── DIPPING SAUCES ───────────────────────────
@@ -192,7 +195,7 @@ export const menuItems: MenuItem[] = [
 /** Build-your-own pizza options (rendered on /menu and the create-your-own card). */
 export const createYourOwnOptions = {
   crusts: ["Traditional", "Thin", "Thick", "Gluten-Free (Medium only, +$2.49)"],
-  sauces: ["Marinara", "BBQ", "Alfredo", "Garlic Spread", "Tandoori Base", "Spicy Base", "Butter Base"],
+  sauces: ["Marinara", "BBQ", "Alfredo", "Garlic Spread", "Tandoori Base", "Spicy Base", "Butter Base", "Pesto"],
   cheeses: ["Mozzarella", "Feta", "Mix Cheddar", "Vegan"],
   meats: ["Pepperoni", "Bacon Crumble", "Ground Beef", "Sliced Bacon", "Italian Sausage", "Ham", "Tandoori Chicken", "Salami", "Hot Sausage", "Pancetta"],
   veggies: ["Red Onion", "Mushroom", "Green Pepper", "Hot Pepper", "Red Pepper", "Jalapeno", "Black Olive", "Green Olive", "Spinach", "Tomato", "Sun-Dried Tomato", "Garlic", "Pineapple", "Broccoli"],

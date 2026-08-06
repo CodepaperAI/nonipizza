@@ -30,7 +30,13 @@ export function restaurantJsonLd() {
     telephone: primaryLocation.phones[0],
     servesCuisine: siteConfig.cuisines,
     priceRange: siteConfig.priceRange,
-    image: `${siteConfig.siteUrl}/images/og-default.svg`,
+    // Real photography in the three crops Google asks for (16:9, 4:3, 1:1). Must be a
+    // raster format — Google's structured-data image guidance excludes SVG.
+    image: [
+      `${siteConfig.siteUrl}/images/photos/brand-16x9.jpg`,
+      `${siteConfig.siteUrl}/images/photos/brand-4x3.jpg`,
+      `${siteConfig.siteUrl}/images/photos/brand-1x1.jpg`,
+    ],
     slogan: siteConfig.tagline,
     address: {
       "@type": "PostalAddress",

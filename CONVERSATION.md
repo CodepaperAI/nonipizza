@@ -5,6 +5,102 @@
 
 ---
 
+## Entry 11 — Image gap-fill: every menu item now has its own photo — 2026-08-06
+
+- Client supplied 34 generated renders in `nonipizza_photos/`, one per placeholder slot.
+  **Every file was opened and checked against its `menu.ts` description before mapping** —
+  filenames treated as hints only, per the rule that caused this whole batch.
+- All 34 verified correct and mutually distinct: Caesar ≠ Greek ≠ Garden; plain Fries vs
+  skin-on Wedges vs Onion Rings; poppers vs mozzarella sticks; three separable garlic-finger
+  variants; veg vs chicken samosa fillings.
+- Caught in review: every source carries a Gemini **"✦" watermark** bottom-right, and several
+  have light letterbox borders. New `scripts/prep-generated-photos.mjs`
+  (`npm run images:generated`) crops both out with a proportional 4:3 window → 1200×900 q82.
+  Outputs re-checked visually; watermark gone.
+- Also fixed two long-standing defects from IMAGE-MANIFEST §4: **Butter Chicken now has no
+  onion**, and **all three paneer pizzas show cubed paneer, not chicken**. `NO_PHOTO` is now
+  empty and **0 of 65 menu items render the placeholder** (was 32).
+- These are AI renders, **not** Noni's photography — deliberately kept out of `REAL_PHOTOS`;
+  CREDITS.md documents the split as Batch A/B. Deleted the unused Unsplash `salad.jpg`
+  (686 KB, no longer referenced). `nonipizza_photos/` git/vercel-ignored. Build passes.
+
+## Entry 10 — Client review batch: hours, offers, images — 2026-08-06
+
+- **Hours changed sitewide**: Sun–Thu 11 AM–9 PM, Fri–Sat 11 AM–11 PM. One edit in
+  `locations.ts` drives footer, /find-us, FactsBlock and the Restaurant JSON-LD
+  (`closes` 21:00 / 23:00); the hardcoded "until 11 PM (2 AM Fri–Sat)" AEO leads and FAQs on
+  all 7 cluster pages were rewritten. **Owner must update the Google Business Profile to match.**
+- **All free-delivery framing removed**, including the "within 3 km on orders $25+" phrasing
+  the client reads as a free-delivery claim — leads, FAQs, HowTo step 3, PromoStrip, deals
+  footnote, FactsBlock row, meta descriptions. Copy now says only that we deliver in Woodstock.
+  Radius/minimum kept as data in `primaryLocation.delivery`, unpublished. **Flagged:** CLAUDE.md
+  §2 had them as real facts — confirm customers shouldn't see the $25 minimum anywhere.
+- **"FREE 1 dipping + 1 pop"** stripped from all six Indian-fusion items and every repeat of it
+  on `/indian-fusion-pizza-woodstock`. Create Your Own dropped "4 toppings" → "toppings".
+  Mozzarella Sticks & Jalapeño Poppers now priced **5 pcs / 10 pcs**. New hero sub-line verbatim.
+- **One dish, one accurate image** is now a rule in CLAUDE.md §5. Removed the `salads`, `sides`
+  and `desserts` category fallbacks — one messy-fries photo was standing in for Fries, Wedges,
+  Onion Rings and 15 other sides; one salad photo for all six salads. Butter Chicken's render
+  shows onion the dish doesn't have, so it joined `NO_PHOTO`. **~30 slots now render the branded
+  placeholder** and are itemised in IMAGE-MANIFEST.md GAPS — they need a photo shoot.
+- Coupon Deals section left untouched pending the client's answer. `npm run build` passes.
+
+## Entry 9 — Square-pizza fix + Indian-fusion banner — 2026-08-05
+
+- Client flagged the Spicy Chicken / Spicy Paneer renders as **square pizzas** — Noni's makes
+  none. Spicy Chicken now uses the real (round) IndianFusion_2 cut-out; it lacks the jalapenos,
+  but a real photo beats a render of a shape we don't sell.
+- **Spicy Paneer now has no photo.** It's vegetarian and every option was wrong: the only
+  paneer-accurate render is the square one, and both other "paneer" renders *and* the
+  `indian-fusion` category fallback show chicken. Added a `NO_PHOTO` set to `src/lib/photos.ts`
+  so it renders the branded placeholder instead of chicken.
+- Found unreported: `pizza-butter-paneer` and `pizza-tandoori-paneer` also show **chicken on
+  vegetarian items**. Round, so out of the reported scope — flagged in IMAGE-MANIFEST.md §4
+  awaiting a decision, not changed.
+- `/indian-fusion-pizza-woodstock`: replaced the curry-and-rice figure with a real Indian-fusion
+  pizza banner (16:9, `indian-fusion-feature.jpg`). Curry cut-out now unused; Noni's doesn't
+  sell curry. Deleted the two orphaned JPEGs. Build clean, 19/19.
+
+---
+
+## Entry 8 — Topping-accurate photo audit + menu additions — 2026-08-05
+
+- Audited every source image by opening it (2× zoom on ambiguous pizzas) and wrote
+  `IMAGE-MANIFEST.md`. Rule applied: assign a photo only if visible toppings match the menu
+  description; otherwise leave the AI fallback and log it under GAPS.
+- **Corrected two wrong assignments from Entry 7**: SpecialtyPizzas_3 has no mushrooms, so it
+  is **Meat Lover, not Canadian**; the two Indian-fusion shots are near-duplicates, so only one
+  becomes Tandoori Chicken and **Spicy Chicken reverts to fallback** (needs jalapenos). Restored
+  both AI originals from git.
+- `gemini-watermark-cleaned/` identified as the **AI render set, not photography** — excluded
+  from all mapping and from `REAL_PHOTOS`. No shawarma slot exists anywhere (CLAUDE.md rule).
+- Fixed a real defect: WingsCombos_2/4 ship with an *opaque* baked-in background (not stray
+  alpha). Alpha-hardening and luma-keying both failed; tight crops now fill their frame so no
+  black rectangle shows. Recomputed the `wings-breaded` crop against rendered candidates.
+- Menu: added **Pesto** sauce to Create Your Own, and **Jalapeño Poppers** to Sides ($8.49/$13.99).
+- Source folders git+vercel-ignored; only JPEGs ship. Build clean, 19/19 static pages.
+
+---
+
+## Entry 7 — Real Noni's brand photography replaces AI renders — 2026-08-05
+
+- Noni's supplied its real assets: transparent-PNG dish cut-outs (7 top-level folders), the
+  dark brand texture, the wordmark and the tomato "N" favicon.
+- Added `scripts/prep-brand-images.mjs` (`npm run images:prep`) — composites each cut-out onto
+  the brand texture and writes JPEGs at each card's aspect ratio (4:3 product / 16:9 deal /
+  3:4 category / 16:9 hero), `contain`-fitted so no topping gets cropped. Hardens the alpha on
+  the two combo files that shipped with wood-grain streaks; crops breaded wings out of a combo.
+- **23 slots are now real photos**: Hawaiian, Deluxe, Canadian, Garden, BBQ Chicken, Tandoori
+  Chicken, Spicy Chicken, baked + breaded wings, panzerotti, 4 category teasers, all 7 deals,
+  2 coupons and the hero. Deal photos are now an explicit id→file map, not keyword matching.
+- Real wordmark/favicon wired in: `Wordmark` now shows the tomato mark (white circle — red on
+  maroon fails contrast); `src/app/icon.png` + apple icon in layout metadata.
+- Butter chicken shot used on `/indian-fusion-pizza-woodstock` as a captioned flavour-base
+  figure, **not** a menu item — Noni's sells the pizzas, not curry and rice.
+- `REAL_PHOTOS` in `src/lib/photos.ts` tracks real-vs-AI; CREDITS/README/CLAUDE.md updated.
+
+---
+
 ## Entry 6 — Real ordering URL + drop app badges — 2026-07-29
 
 - Pointed all **Order Now / Grab Deal** CTAs at Noni's **Mealsy** online-ordering page

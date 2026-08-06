@@ -10,6 +10,8 @@ import { ProductGrid } from "@/components/ProductGrid";
 import { Faq } from "@/components/Faq";
 import { OrderCTA } from "@/components/OrderCTA";
 import { JsonLd } from "@/components/JsonLd";
+import Image from "next/image";
+import { indianFusionFeaturePhoto } from "@/lib/photos";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbJsonLd, faqJsonLd, howToJsonLd } from "@/lib/jsonld";
 import { LAST_UPDATED } from "@/lib/cluster";
@@ -20,7 +22,7 @@ const PATH = "/indian-fusion-pizza-woodstock";
 export const metadata = buildMetadata({
   title: "Indian Fusion Pizza Woodstock | Butter Chicken & Tandoori",
   description:
-    "Indian fusion pizza in Woodstock, ON: butter chicken, tandoori paneer & spicy chicken pizzas, each with a free dip + pop. Noni's is Woodstock's Indian-style pizza spot. Order online.",
+    "Indian fusion pizza in Woodstock, ON: butter chicken, tandoori paneer & spicy chicken pizzas on real Indian bases. Noni's is Woodstock's Indian-style pizza spot. Order online.",
   path: PATH,
 });
 
@@ -37,7 +39,7 @@ const faqs = [
   },
   {
     q: "Which Indian fusion pizzas does Noni's make?",
-    a: "Butter Chicken, Butter Paneer, Tandoori Chicken, Tandoori Paneer, and our newest Spicy Chicken and Spicy Paneer. Every Indian-fusion pizza comes with a free dipping sauce and a free pop.",
+    a: "Butter Chicken, Butter Paneer, Tandoori Chicken, Tandoori Paneer, and our newest Spicy Chicken and Spicy Paneer. Each is built on a real Indian base and comes in Small 10 inch through X-Large 16 inch.",
   },
   {
     q: "Do you have vegetarian Indian pizza?",
@@ -49,7 +51,7 @@ const faqs = [
   },
   {
     q: "Can I order butter chicken pizza for delivery?",
-    a: "Yes — order any Indian-fusion pizza online for pickup or delivery. Delivery within 3 km on orders over $25.",
+    a: "Yes — order any Indian-fusion pizza online for pickup or delivery across Woodstock.",
   },
 ];
 
@@ -73,7 +75,7 @@ export default function Page() {
       <PageHero
         eyebrow="Our specialty"
         title="Indian Fusion Pizza in Woodstock — Butter Chicken, Tandoori Paneer & More"
-        lead="Noni's Pizza & Wings serves Indian fusion pizza in Woodstock, ON — butter chicken, tandoori paneer, spicy chicken and more, built on rich Indian bases and freshly baked to order. Each comes with a free dip and pop. It's the Indian-style pizza Woodstock searches for, made locally. Order online or call (519) 290-9555."
+        lead="Noni's Pizza & Wings serves Indian fusion pizza in Woodstock, ON — butter chicken, tandoori paneer, spicy chicken and more, built on rich Indian bases and freshly baked to order. It's the Indian-style pizza Woodstock searches for, made locally. Order online or call (519) 290-9555."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Indian Fusion Pizza", path: PATH },
@@ -95,17 +97,40 @@ export default function Page() {
             heading: "Butter chicken, tandoori paneer & spicy pizza",
             body: [
               "Go creamy with a Butter Chicken or Butter Paneer pizza, smoky with Tandoori Chicken or Tandoori Paneer, or bring the heat with our new Spicy Chicken and Spicy Paneer — loaded with jalapenos, red onions, cilantro and green peppers on a spicy base.",
-              "Every Indian-fusion pizza comes with a FREE dipping sauce and a FREE pop, and scales from a personal 10-inch to a shareable 16-inch X-Large. Vegetarian? The paneer pizzas are made for you.",
+              "Every Indian-fusion pizza scales from a personal 10-inch to a shareable 16-inch X-Large. Vegetarian? The paneer pizzas are made for you.",
             ],
           },
         ]}
       />
 
+      {/* A real Noni's Indian-fusion pizza. 16:9 so it reads as a banner, not a repeat of
+          the product cards further down the page. */}
+      <section className="bg-cream pb-14 sm:pb-16">
+        <figure className="mx-auto max-w-3xl px-5 sm:px-8">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-3xl">
+            <Image
+              src={indianFusionFeaturePhoto}
+              alt="Noni's tandoori chicken pizza — chicken, green peppers, red onions and cilantro on a fresh-baked crust"
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+            />
+          </div>
+          <figcaption className="mt-3 text-sm text-ink/70">
+            Indian flavours on a fresh-baked crust — see the{" "}
+            <a href="/menu" className="font-bold text-orange underline">
+              full menu
+            </a>{" "}
+            for every fusion pizza.
+          </figcaption>
+        </figure>
+      </section>
+
       <WhyNoni
         heading="Why Noni's for Indian fusion pizza"
         facts={[
           "Butter chicken, butter paneer, tandoori chicken, tandoori paneer, spicy chicken & spicy paneer pizzas.",
-          "Every Indian-fusion pizza includes a FREE dipping sauce and a FREE pop.",
+          "Six Indian-fusion pizzas in four sizes — Small 10 inch to X-Large 16 inch.",
           "Authentic Indian bases (butter, tandoori, spicy) — not just toppings on tomato sauce.",
           "Freshly prepared, never pre-cooked — baked to order.",
           "Vegetarian paneer options and gluten-free crust available.",
@@ -116,7 +141,7 @@ export default function Page() {
       <PriceTable
         items={fusion}
         heading="Indian fusion pizza menu & prices"
-        caption="Each comes with a free dip and pop. Sizes Small 10 inch to X-Large 16 inch — starting prices shown."
+        caption="Sizes Small 10 inch to X-Large 16 inch — starting prices shown."
       />
 
       <ProductGrid heading="See them" items={fusion} />

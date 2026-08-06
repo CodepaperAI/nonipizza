@@ -43,27 +43,45 @@ cp .env.example .env.local
 
 ---
 
-## Where to swap real photos
+## Photos — what's real, and how to add more
 
-The site ships with **AI-generated dish renders** — one per menu item, plus category
-teasers and the hero (self-hosted in `public/images/photos/` — see [`CREDITS.md`](./CREDITS.md)),
-plus a **branded SVG placeholder** fallback for any unmapped slot. Images are rendered by
-[`src/components/DishImage.tsx`](./src/components/DishImage.tsx) and mapped to
-categories / items / deals in [`src/lib/photos.ts`](./src/lib/photos.ts).
+Photos live in `public/images/photos/`, are rendered by
+[`src/components/DishImage.tsx`](./src/components/DishImage.tsx), and are mapped to
+categories / items / deals in [`src/lib/photos.ts`](./src/lib/photos.ts) — the single place
+image choices live. Any unmapped slot falls back to a **branded SVG placeholder**.
 
-> These AI-generated images are **not** photographs of Noni's actual dishes — they complete
-> the launch layout. Swap in real food photography anytime.
+Two kinds of image, tracked by the `REAL_PHOTOS` set in `src/lib/photos.ts`:
 
-**To use real dish photos:**
+- **Real Noni's photography** — the pizzas, wings, panzerotti, every deal, the category
+  teasers and the hero. Built from the restaurant's own transparent-PNG dish cut-outs.
+- **AI-generated renders** — the remaining slots (paneer pizzas, several signature pizzas,
+  sides, ice cream, drinks). These are illustrative, **not** photographs of Noni's plates.
 
-1. Add optimized JPEG/WebP files to `public/images/photos/`.
-2. Point at them in `src/lib/photos.ts` (category, item, deal, and hero maps) — that's the
-   single place image choices live. `DishImage` handles `next/image` optimization and the
-   SVG fallback automatically; no component edits needed.
+See [`CREDITS.md`](./CREDITS.md) for the full per-slot breakdown.
+
+### Regenerating from the brand asset folders
+
+```bash
+npm run images:prep      # scripts/prep-brand-images.mjs
+```
+
+It composites the cut-outs in the top-level asset folders (`specialty-pizzas/`,
+`chicken-wings/`, `panzerotti/`, `pizza-deals/`, `pizza-wings-combos/`,
+`indian-fusion-pizza-sides/`, `walk-in-special/`) onto Noni's dark texture and writes each
+one at the aspect ratio of the card that shows it (4:3 product, 16:9 deal, 3:4 category,
+16:9 hero), plus the wordmark, tomato mark and favicon. Add a new cut-out by extending
+`SRC` and `JOBS` in that script.
+
+### Adding a plain photo (no cut-out)
+
+1. Add an optimized JPEG/WebP to `public/images/photos/`.
+2. Point at it in `src/lib/photos.ts` and add the filename to `REAL_PHOTOS` if it's genuine
+   Noni's photography. `DishImage` handles `next/image` optimization and the SVG fallback;
+   no component edits needed.
 3. Optionally add a real `og-default.jpg` for social sharing and point `src/lib/seo.ts` at it.
 
-`alt` text is the dish/category name, already passed in. Keep new photos landscape and
-reasonably sized (≈1400px wide) — `next/image` generates responsive variants.
+`alt` text is the dish/category name, already passed in. Keep photos ≈1200–1400px wide —
+`next/image` generates responsive variants.
 
 ---
 

@@ -14,7 +14,6 @@ import { breadcrumbJsonLd, faqJsonLd, howToJsonLd } from "@/lib/jsonld";
 import { LAST_UPDATED } from "@/lib/cluster";
 import { getItemById } from "@/data/menu";
 import type { MenuItem } from "@/data/menu";
-import { primaryLocation } from "@/data/locations";
 
 const PATH = "/order-pizza-online-woodstock";
 
@@ -47,11 +46,11 @@ const faqs = [
   },
   {
     q: "Can I customize my pizza when ordering online?",
-    a: "Absolutely. Create Your Own lets you choose crust (including gluten-free), sauce, cheese and up to four toppings before you check out.",
+    a: "Absolutely. Create Your Own lets you choose crust (including gluten-free), sauce, cheese and your toppings before you check out.",
   },
   {
-    q: "Is there a minimum for online delivery orders?",
-    a: `Delivery is available within ${primaryLocation.delivery.radiusKm} km on orders over $${primaryLocation.delivery.minSubtotal}. Smaller orders and pickup are always available.`,
+    q: "Can I get my online order delivered?",
+    a: "Yes — choose delivery at checkout and we'll bring it to your address in Woodstock. Pickup is always available too.",
   },
   {
     q: "Can I add wings, sides or dessert to my online order?",
@@ -83,7 +82,7 @@ export default function Page() {
       <PageHero
         eyebrow="Order Online"
         title="Order Pizza Online in Woodstock — Pickup or Delivery"
-        lead="Order pizza online from Noni's Pizza & Wings in Woodstock, ON in just a few taps. Build your own or choose a signature or Indian-fusion pizza, then pick fast pickup at 300 Main St, Unit 8, or local delivery within 3 km on orders over $25. Call (519) 290-9555."
+        lead="Order pizza online from Noni's Pizza & Wings in Woodstock, ON in just a few taps. Build your own or choose a signature or Indian-fusion pizza, then pick fast pickup at 300 Main St, Unit 8, or local delivery across Woodstock. Call (519) 290-9555."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Order Pizza Online", path: PATH },
@@ -104,7 +103,7 @@ export default function Page() {
           {
             heading: "Order pizza online near me — pickup or delivery",
             body: [
-              "Choose pickup at 300 Main St, Unit 8, or have it delivered within 3 km on orders over $25.",
+              "Choose pickup at 300 Main St, Unit 8, or have it delivered to your address in Woodstock.",
               "Add wings, panzerotti, sides or ice cream to the same order and check out once.",
             ],
           },

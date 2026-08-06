@@ -9,10 +9,10 @@ import { heroPhoto } from "@/lib/photos";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-maroon text-cream">
-      {/* lifestyle photo background */}
+      {/* brand spread behind the headline */}
       <Image
         src={heroPhoto}
-        alt="Friends sharing a freshly made pizza at the table"
+        alt="Two freshly baked Noni's pizzas with a board of wings and cold pop"
         fill
         priority
         sizes="100vw"
@@ -39,9 +39,11 @@ export function Hero() {
           <div className="mt-6 flex justify-center">
             <Badge>⚡ Delivered fast — freshly made to order.</Badge>
           </div>
+          {/* Client-approved wording — kept verbatim, not composed from siteConfig.tagline. */}
           <p className="mx-auto mt-5 max-w-xl text-body-lg text-cream/85">
-            Locally owned pizza, baked wings & bold Indian-fusion pizzas in
-            Woodstock. {siteConfig.tagline}
+            Locally owned pizza, wings, panzerotti and more in Woodstock. Freshly
+            prepared, never pre-cooked, simply Delicious, Made just for you.
+            Proudly Canadian.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href={siteConfig.orderUrl} external variant="filled" size="lg">

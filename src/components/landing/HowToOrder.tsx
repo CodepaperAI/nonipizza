@@ -16,7 +16,7 @@ export const DEFAULT_ORDER_STEPS = [
   },
   {
     name: "Choose pickup or delivery",
-    text: "Select pickup at 300 Main St, Unit 8, Woodstock, or delivery to your address. Delivery within 3 km on orders over $25.",
+    text: "Select pickup at 300 Main St, Unit 8, Woodstock, or delivery to your address in Woodstock.",
   },
   {
     name: "Check out",

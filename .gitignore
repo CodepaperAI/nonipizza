@@ -14,8 +14,18 @@
 .DS_Store
 *.pem
 
-# source dish images (large PNGs) — optimized JPGs ship in public/images/photos
+# Source dish images (~340MB of PNGs). Inputs to `npm run images:prep` and
+# `npm run images:generated`, which write the optimized JPEGs into public/images/photos —
+# only those ship. Keep these OUT of public/, which Next.js serves publicly.
 /gemini-watermark-cleaned/
+/specialty-pizzas/
+/walk-in-special/
+/panzerotti/
+/pizza-deals/
+/pizza-wings-combos/
+/chicken-wings/
+/indian-fusion-pizza-sides/
+/nonipizza_photos/
 
 # debug
 npm-debug.log*

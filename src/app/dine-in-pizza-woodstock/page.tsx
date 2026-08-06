@@ -21,7 +21,7 @@ const PATH = "/dine-in-pizza-woodstock";
 export const metadata = buildMetadata({
   title: "Dine-In Pizza in Woodstock, ON | Noni's Pizza & Wings",
   description:
-    "Dine-in pizza in Woodstock, ON at Noni's Pizza & Wings, 300 Main St, Unit 8. Fresh pizza, wings & panzerotti to eat in. Open until 11 PM (2 AM Fri–Sat). Pickup & delivery too.",
+    "Dine-in pizza in Woodstock, ON at Noni's Pizza & Wings, 300 Main St, Unit 8. Fresh pizza, wings & panzerotti to eat in. Open 11 AM–9 PM Sun–Thu, 11 AM–11 PM Fri–Sat.",
   path: PATH,
 });
 
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: "What are your dine-in hours?",
-    a: "We're open for dine-in until 11 PM Sunday to Thursday and until 2 AM Friday and Saturday.",
+    a: "We're open for dine-in from 11:00 AM to 9:00 PM Sunday to Thursday, and from 11:00 AM to 11:00 PM on Friday and Saturday.",
   },
   {
     q: "Is Noni's good for families and groups?",
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "Do you offer pickup and delivery as well as dine-in?",
-    a: "Yes — all three. Delivery within 3 km on orders over $25, plus pickup at the counter.",
+    a: "Yes — all three. We deliver across Woodstock, and pickup is available at the counter.",
   },
   {
     q: "Where exactly are you located?",
@@ -102,7 +102,7 @@ export default function Page() {
       <PageHero
         eyebrow="Dine-In"
         title="Dine-In Pizza in Woodstock, ON at Noni's Pizza & Wings"
-        lead="Yes — you can dine in at Noni's Pizza & Wings, 300 Main St, Unit 8, Woodstock, ON. Enjoy freshly made pizza, baked wings, panzerotti and Kawartha ice cream in-house, or choose pickup or delivery. Open until 11 PM (2 AM Fri–Sat). Call (519) 290-9555 or order online."
+        lead="Yes — you can dine in at Noni's Pizza & Wings, 300 Main St, Unit 8, Woodstock, ON. Enjoy freshly made pizza, baked wings, panzerotti and Kawartha ice cream in-house, or choose pickup or delivery. Open 11 AM–9 PM Sun–Thu and 11 AM–11 PM Fri–Sat. Call (519) 290-9555 or order online."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Dine-In Pizza", path: PATH },
@@ -121,9 +121,9 @@ export default function Page() {
             ],
           },
           {
-            heading: "Great for families, students and late nights",
+            heading: "Great for families, students and weekend nights",
             body: [
-              "Bring the family for a party pizza (21×15 inch, 18 slices) or a combo deal, grab a quick weeknight bite, or settle in late — we serve until 2 AM on Friday and Saturday.",
+              "Bring the family for a party pizza (21×15 inch, 18 slices) or a combo deal, grab a quick weeknight bite, or settle in on the weekend — we serve until 11 PM on Friday and Saturday.",
               "Not staying? The same fresh menu is available for pickup and delivery.",
             ],
           },
@@ -136,7 +136,7 @@ export default function Page() {
           "Freshly prepared, never pre-cooked — made to order at the counter.",
           "Indian-fusion pizzas, baked wings and panzerotti all under one roof.",
           "Party pizzas and combo deals for groups.",
-          "Open late — until 2 AM Friday and Saturday.",
+          "Open until 11 PM Friday and Saturday.",
           "Kawartha ice cream (11 flavours) for dessert.",
           "Locally owned on Main Street, Woodstock, with parking nearby.",
         ]}

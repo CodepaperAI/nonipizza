@@ -35,7 +35,7 @@ const comparison: { feature: string; local: string; chain: string }[] = [
   },
   {
     feature: "Delivery",
-    local: "Delivery within 3 km on orders over $25; pickup & dine-in too.",
+    local: "Local delivery across Woodstock; pickup & dine-in too.",
     chain: "App-based delivery over a wide area; fees and minimums vary by location.",
   },
   {
@@ -50,7 +50,7 @@ const comparison: { feature: string; local: string; chain: string }[] = [
   },
   {
     feature: "Hours",
-    local: "Until 11 PM Sun–Thu, 2 AM Fri–Sat.",
+    local: "11 AM–9 PM Sun–Thu, 11 AM–11 PM Fri–Sat.",
     chain: "Varies by branch.",
   },
 ];
@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "Do local pizza places deliver as fast as chains?",
-    a: "Because each pizza is made fresh to order, timing depends on how busy we are. We prep, bake and deliver as fast as we can so it arrives hot within our 3 km delivery area.",
+    a: "Because each pizza is made fresh to order, timing depends on how busy we are. We prep, bake and deliver as fast as we can so it arrives hot.",
   },
   {
     q: "What can I get at Noni's that chains usually don't offer?",
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: "Does Noni's deliver across Woodstock?",
-    a: "Yes — delivery within 3 km on orders over $25, plus pickup and dine-in at 300 Main St, Unit 8.",
+    a: "Yes — we deliver across Woodstock, plus pickup and dine-in at 300 Main St, Unit 8.",
   },
 ];
 
@@ -98,7 +98,7 @@ export default function Page() {
       <PageHero
         eyebrow="Local vs. Chains"
         title="Pizza Delivery in Woodstock: Local vs. Chains — How to Choose"
-        lead="Choosing between chain pizza delivery and a local option in Woodstock, ON? Both deliver — but Noni's Pizza & Wings makes every pizza fresh to order, never pre-cooked, with Indian-fusion flavours the big chains don't offer, delivery within 3 km on orders over $25, and local ownership. Order online or call (519) 290-9555."
+        lead="Choosing between chain pizza delivery and a local option in Woodstock, ON? Both deliver — but Noni's Pizza & Wings makes every pizza fresh to order, never pre-cooked, with Indian-fusion flavours the big chains don't offer, and local ownership. Order online or call (519) 290-9555."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Local vs. Chains", path: PATH },
@@ -168,9 +168,9 @@ export default function Page() {
         facts={[
           "Freshly prepared, never pre-cooked — made to order, not par-baked.",
           "Indian-fusion pizzas the national chains don't offer.",
-          "Delivery within 3 km on orders over $25.",
+          "Local delivery across Woodstock, plus pickup and dine-in.",
           "Wings, panzerotti & Kawartha ice cream in one order.",
-          "Open late — until 2 AM Friday and Saturday.",
+          "Open until 11 PM Friday and Saturday.",
           "Locally owned in Woodstock, Ontario.",
         ]}
       />

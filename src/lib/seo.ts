@@ -15,7 +15,8 @@ export function buildMetadata(opts: {
   ogImage?: string;
 }): Metadata {
   const url = new URL(opts.path, siteConfig.siteUrl).toString();
-  const ogImage = opts.ogImage ?? "/images/og-default.svg";
+  // JPEG, not SVG — Facebook, LinkedIn and X all ignore an SVG og:image.
+  const ogImage = opts.ogImage ?? "/images/og-default.jpg";
   return {
     title: opts.title,
     description: opts.description,

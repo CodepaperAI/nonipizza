@@ -14,7 +14,7 @@ import { breadcrumbJsonLd, faqJsonLd, howToJsonLd } from "@/lib/jsonld";
 import { LAST_UPDATED } from "@/lib/cluster";
 import { getItemById } from "@/data/menu";
 import type { MenuItem } from "@/data/menu";
-import { formattedAddress, primaryLocation } from "@/data/locations";
+import { formattedAddress } from "@/data/locations";
 
 const PATH = "/pizza-near-me-woodstock";
 
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "Does Noni's deliver pizza near me?",
-    a: `We do. Delivery within ${primaryLocation.delivery.radiusKm} km on orders over $${primaryLocation.delivery.minSubtotal}, plus pickup and dine-in.`,
+    a: "We do — Noni's delivers across Woodstock, and pickup and dine-in are always available.",
   },
   {
     q: "What kind of pizza does Noni's make?",
@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     q: "How late is Noni's open near me?",
-    a: "We're open until 11 PM Sunday to Thursday and until 2 AM Friday and Saturday, so late-night pizza cravings are covered.",
+    a: "We're open 11:00 AM to 9:00 PM Sunday to Thursday, and 11:00 AM to 11:00 PM on Friday and Saturday.",
   },
   {
     q: "How much does a pizza cost?",
@@ -83,7 +83,7 @@ export default function Page() {
       <PageHero
         eyebrow="Pizza Near Me"
         title="Pizza Near Me in Woodstock, ON — Noni's Pizza & Wings"
-        lead="Noni's Pizza & Wings is a locally owned pizza restaurant at 300 Main St, Unit 8, Woodstock, ON. Searching for pizza near me? We make specialty, Indian-fusion and build-your-own pizzas fresh to order for pickup, dine-in or delivery. Open until 11 PM (2 AM Fri–Sat). Order online or call (519) 290-9555."
+        lead="Noni's Pizza & Wings is a locally owned pizza restaurant at 300 Main St, Unit 8, Woodstock, ON. Searching for pizza near me? We make specialty, Indian-fusion and build-your-own pizzas fresh to order for pickup, dine-in or delivery. Open 11 AM–9 PM Sun–Thu and 11 AM–11 PM Fri–Sat. Order online or call (519) 290-9555."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Pizza Near Me", path: PATH },
@@ -104,7 +104,7 @@ export default function Page() {
           {
             heading: "Pizza near me — fresh, fast and made your way",
             body: [
-              "Choose a specialty pizza like the Woodstock Special or Meat Lover, go bold with an Indian-fusion butter chicken pizza, or build your own with any sauce, crust and up to four toppings (gluten-free crust available).",
+              "Choose a specialty pizza like the Woodstock Special or Meat Lover, go bold with an Indian-fusion butter chicken pizza, or build your own with any sauce, crust and your choice of toppings (gluten-free crust available).",
               "Pair it with baked wings or handcrafted panzerotti, then order online in a couple of taps.",
             ],
           },

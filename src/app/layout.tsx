@@ -38,7 +38,12 @@ export const metadata: Metadata = {
   ],
   robots: { index: true, follow: true },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    // Noni's real tomato "N" mark, with the branded SVG as a vector fallback.
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "74x74" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/icon.png", sizes: "74x74" }],
   },
 };
 

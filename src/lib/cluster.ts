@@ -31,4 +31,4 @@ export function siblingLinks(currentPath: string): ClusterPage[] {
 }
 
 /** Freshness stamp shown on every cluster page (GEO). Refresh per build session. */
-export const LAST_UPDATED = "July 29, 2026";
+export const LAST_UPDATED = "August 6, 2026";

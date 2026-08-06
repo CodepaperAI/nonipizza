@@ -1,0 +1,25 @@
+# Files excluded from the Vercel deployment bundle.
+#
+# The source-asset folders hold Noni's original dish cut-outs plus the generated dish
+# renders (~340MB of PNGs). They are build-time inputs to `npm run images:prep` and
+# `npm run images:generated`, which write the optimized JPEGs into public/images/photos —
+# those are what the site serves. The sources must never be deployed: anything under
+# public/ is publicly downloadable, and these would only bloat the bundle.
+#
+# Kept in sync with .gitignore.
+/gemini-watermark-cleaned/
+/specialty-pizzas/
+/walk-in-special/
+/panzerotti/
+/pizza-deals/
+/pizza-wings-combos/
+/chicken-wings/
+/indian-fusion-pizza-sides/
+/nonipizza_photos/
+
+# Docs — not needed at runtime.
+CLAUDE.md
+DESIGN.md
+CONVERSATION.md
+CREDITS.md
+IMAGE-MANIFEST.md

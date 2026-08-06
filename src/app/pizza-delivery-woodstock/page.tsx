@@ -14,14 +14,13 @@ import { breadcrumbJsonLd, faqJsonLd, howToJsonLd } from "@/lib/jsonld";
 import { LAST_UPDATED } from "@/lib/cluster";
 import { getItemById } from "@/data/menu";
 import type { MenuItem } from "@/data/menu";
-import { primaryLocation } from "@/data/locations";
 
 const PATH = "/pizza-delivery-woodstock";
 
 export const metadata = buildMetadata({
   title: "Pizza Delivery in Woodstock, ON | Noni's Pizza & Wings",
   description:
-    "Pizza delivery near you in Woodstock, ON. Delivery within 3 km on orders over $25. Freshly made pizza, wings & panzerotti delivered hot. Order online.",
+    "Pizza delivery near you in Woodstock, ON. Freshly made pizza, wings & panzerotti delivered hot — never pre-cooked. Order online or call (519) 290-9555.",
   path: PATH,
 });
 
@@ -39,15 +38,15 @@ const tableItems = [
 const faqs = [
   {
     q: "Does Noni's deliver pizza near me in Woodstock?",
-    a: `Yes. Noni's Pizza & Wings delivers freshly made pizza across Woodstock, ON. Delivery within ${primaryLocation.delivery.radiusKm} km on orders over $${primaryLocation.delivery.minSubtotal}; pickup and dine-in are also available.`,
+    a: "Yes. Noni's Pizza & Wings delivers freshly made pizza across Woodstock, ON; pickup and dine-in are also available.",
   },
   {
     q: "What time does Noni's stop delivering?",
-    a: "Delivery runs during opening hours — until 11 PM Sunday to Thursday and until 2 AM Friday and Saturday.",
+    a: "Delivery runs during opening hours — until 9 PM Sunday to Thursday and until 11 PM Friday and Saturday.",
   },
   {
     q: "How far do you deliver from Woodstock?",
-    a: `Delivery covers a ${primaryLocation.delivery.radiusKm} km radius from 300 Main St, Unit 8. Start an order to confirm whether your address is in range.`,
+    a: "We deliver from 300 Main St, Unit 8, across Woodstock. Start an order to confirm whether your address is in range.",
   },
   {
     q: "How long does pizza delivery take?",
@@ -58,8 +57,8 @@ const faqs = [
     a: "Yes — add baked wings, panzerotti, sides and Kawartha ice cream to the same delivery order.",
   },
   {
-    q: "Is there a minimum order for delivery?",
-    a: `Delivery is available on orders over $${primaryLocation.delivery.minSubtotal}, within ${primaryLocation.delivery.radiusKm} km. Smaller orders can be picked up.`,
+    q: "Can I pick up instead of having it delivered?",
+    a: "Yes — choose pickup at checkout and collect your order at 300 Main St, Unit 8, Woodstock. Dine-in is available too.",
   },
 ];
 
@@ -83,7 +82,7 @@ export default function Page() {
       <PageHero
         eyebrow="Delivery"
         title="Pizza Delivery in Woodstock, ON — Hot & Fresh to Your Door"
-        lead="Yes — Noni's Pizza & Wings delivers freshly made pizza across Woodstock, ON. Order online for delivery or pickup from 300 Main St, Unit 8. Delivery within 3 km on orders over $25, open until 11 PM (2 AM Fri–Sat). Call (519) 290-9555."
+        lead="Yes — Noni's Pizza & Wings delivers freshly made pizza across Woodstock, ON. Order online for delivery or pickup from 300 Main St, Unit 8. Every pizza is freshly prepared, never pre-cooked. Open 11 AM–9 PM Sunday to Thursday and 11 AM–11 PM Friday and Saturday. Call (519) 290-9555."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Pizza Delivery", path: PATH },
@@ -98,13 +97,13 @@ export default function Page() {
             heading: "Hot pizza delivery, freshly made",
             body: [
               "Noni's Pizza & Wings is a locally owned pizza and wings restaurant in Woodstock, Ontario — and when you want pizza delivery near you, there are no frozen shortcuts. Every order is freshly prepared, never pre-cooked, then delivered hot across town.",
-              "Whether it's a family feast or a solo late-night craving, we bring pizza that delivers on flavour. Prefer to grab it yourself? Takeaway and dine-in are always available too.",
+              "Whether it's a family feast or a solo evening craving, we bring pizza that delivers on flavour. Prefer to grab it yourself? Takeaway and dine-in are always available too.",
             ],
           },
           {
             heading: "Pizza that delivers to you — and saves you money",
             body: [
-              `Delivery within ${primaryLocation.delivery.radiusKm} km on orders over $${primaryLocation.delivery.minSubtotal} means the closest great pizza is also great value.`,
+              "Local delivery across Woodstock means the closest great pizza is also great value.",
               "Bundle a combo deal — pizza + wings + pop or dips — to feed the whole table for less.",
             ],
           },
@@ -122,7 +121,7 @@ export default function Page() {
       <Faq faqs={faqs} heading="Pizza delivery — frequently asked questions" />
       <InternalLinks currentPath={PATH} />
       <NapMap />
-      <OrderCTA heading="Get it delivered" sub="Delivery within 3 km on orders over $25." />
+      <OrderCTA heading="Get it delivered" sub="Freshly made pizza, delivered across Woodstock." />
     </>
   );
 }

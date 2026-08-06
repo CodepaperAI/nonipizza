@@ -60,22 +60,27 @@ export const primaryLocation: RestaurantLocation = {
   geo: { lat: 43.1301, lng: -80.7477 },
   hours: [
     {
-      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Sunday"],
+      days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
       opens: "11:00",
-      closes: "23:00",
-      label: "Mon–Thu & Sun: 11:00 AM – 11:00 PM",
+      closes: "21:00",
+      label: "Sun–Thu: 11:00 AM – 9:00 PM",
     },
     {
       days: ["Friday", "Saturday"],
       opens: "11:00",
-      closes: "02:00",
-      label: "Fri–Sat: 11:00 AM – 2:00 AM",
+      closes: "23:00",
+      label: "Fri–Sat: 11:00 AM – 11:00 PM",
     },
   ],
+  /**
+   * Delivery terms. The radius/minimum are kept as data (operational fact) but are NOT
+   * published as marketing copy — the client asked for every "free delivery"-flavoured
+   * claim, including the 3 km / $25 framing, off the site. Say only that we deliver.
+   */
   delivery: {
     radiusKm: 3,
     minSubtotal: 25,
-    note: "Delivery within 3 km on orders $25+.",
+    note: "Delivery available in Woodstock, plus pickup and dine-in.",
   },
   mapQuery: "300 Main St Unit 8, Woodstock, ON N4S 1T3, Canada",
 };

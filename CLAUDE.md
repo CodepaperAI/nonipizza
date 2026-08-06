@@ -34,12 +34,18 @@ Never vary the formatting below.
 | **Phone 2** | (519) 290-9521 |
 | **Website** | www.nonispizza.ca |
 
-**Hours**
-- Mon–Thu & Sun: 11:00 AM – 11:00 PM
-- Fri–Sat: 11:00 AM – 2:00 AM (closes 2 AM next day)
+**Hours** *(updated 2026-08-06 — client)*
+- Sun–Thu: 11:00 AM – 9:00 PM
+- Fri–Sat: 11:00 AM – 11:00 PM
+
+> ⚠ **Action item for the owner:** update the **Google Business Profile** hours to match
+> the above. GBP hours that disagree with the site/JSON-LD damage local-pack ranking and
+> confuse customers. Same for any delivery-aggregator listings.
 
 **Order options:** Online ordering, Pickup, Delivery, Dine-in.
-**Delivery:** Delivery within **3 km** on orders **$25+** (standard paid delivery).
+**Delivery:** Delivery is available in Woodstock (paid, standard). The operational radius
+(3 km) and minimum ($25) are kept in `primaryLocation.delivery` as data but are **not
+published** anywhere on the site — see the discontinued note below.
 
 **Everyday specials**
 - Seniors save 10% Mon–Thu
@@ -51,8 +57,14 @@ Never vary the formatting below.
 >   category, the Family Meals category, the shawarma coupons and `shawarmaSaucesAndToppings`
 >   were all removed. The **"Chicken Shawarma Pizza"** signature *pizza* is a topping flavour
 >   and **stays**. Do not recreate a shawarma page/category or list Shawarma in `servesCuisine`.
-> - **Free delivery after 3 PM** is discontinued. Delivery is now standard/paid within 3 km on
->   $25+ orders — never describe delivery as "free" or tie it to "after 3 PM".
+> - **All free-delivery messaging** is gone (client, 2026-08-06). Never describe delivery as
+>   "free", never tie it to "after 3 PM", and **do not publish the "within 3 km on orders
+>   $25+" framing** — the client reads it as a free-delivery claim. Site copy says only that
+>   Noni's delivers in Woodstock, alongside pickup and dine-in.
+> - **"FREE 1 dipping + 1 pop"** on the Indian-fusion pizzas is discontinued. No pizza card,
+>   menu tag or landing page may show that perk.
+> - **"4 toppings"** is off the *Create Your Own* pizza — it is now just "toppings". (The
+>   4-topping counts on Signature pizzas, panzerotti and combo deals are unchanged.)
 
 **Positioning:** Locally owned, proud to serve the Canadian community. Known for
 **Indian-fusion pizzas** (butter chicken, tandoori paneer, spicy chicken/paneer),
@@ -84,10 +96,20 @@ exclusive of HST, subject to change.
 
 **Do not add dependencies beyond this stack without a note here.**
 
-> **Dev/build tooling:** `sharp` (devDependency) is used only by a one-off image-prep step to
-> resize/compress source dish images into `public/images/photos/*.jpg` (~1200px, JPEG q80). It
-> is not imported by the app at runtime. Menu-item photos are AI-generated renders mapped in
-> `src/lib/photos.ts` (see `CREDITS.md`).
+> **Dev/build tooling:** `sharp` (devDependency) is used only by the two image-prep steps —
+> `npm run images:prep` (`scripts/prep-brand-images.mjs`, composites Noni's cut-outs onto the
+> brand texture) and `npm run images:generated` (`scripts/prep-generated-photos.mjs`, crops
+> the watermark/borders off the generated renders in `nonipizza_photos/`). Both write
+> `public/images/photos/*.jpg` at 1200×900, JPEG q82. Neither is imported by the app at
+> runtime.
+>
+> **Photos:** Noni's supplied real transparent-PNG dish cut-outs (in the top-level
+> `specialty-pizzas/`, `chicken-wings/`, `panzerotti/`, `pizza-deals/`,
+> `pizza-wings-combos/`, `indian-fusion-pizza-sides/`, `walk-in-special/` folders) plus the
+> brand texture, wordmark and favicon. The prep script composites them onto the texture. Slots
+> without a supplied photo are still AI-generated renders. Which is which is tracked by the
+> `REAL_PHOTOS` set in `src/lib/photos.ts` — **keep it accurate**, `CREDITS.md` depends on it.
+> Do not describe an AI render as a photo of Noni's food.
 
 ### Environment variables
 - `NEXT_PUBLIC_ORDER_URL` — external online-ordering URL. Defaults to Noni's **Mealsy**
@@ -112,8 +134,17 @@ exclusive of HST, subject to change.
 ├── next.config.mjs
 ├── tsconfig.json
 ├── postcss.config.mjs
+├── scripts/
+│   ├── prep-brand-images.mjs      # npm run images:prep — cut-outs → web JPEGs
+│   └── prep-generated-photos.mjs  # npm run images:generated — renders → web JPEGs
+├── specialty-pizzas/ chicken-wings/ panzerotti/ pizza-deals/
+├── pizza-wings-combos/ indian-fusion-pizza-sides/ walk-in-special/
+│                          # SOURCE brand assets from Noni's: transparent-PNG dish cut-outs,
+│                          # dark texture, wordmark, favicon. Inputs to images:prep — not served.
+├── nonipizza_photos/      # SOURCE generated dish renders (one PNG per menu-item id).
+│                          # Input to images:generated — git/vercel-ignored, not served.
 ├── public/
-│   └── images/           # placeholder food photos (descriptive names = real-photo slots)
+│   └── images/           # web-ready photos + brand chrome (photos/ = real-photo slots)
 └── src/
     ├── app/
     │   ├── layout.tsx            # root layout: fonts, global JSON-LD (LocalBusiness), header/footer
@@ -154,6 +185,18 @@ exclusive of HST, subject to change.
   `siteConfig.orderUrl` (from `NEXT_PUBLIC_ORDER_URL`).
 - **Images**: placeholders in `/public/images` with descriptive filenames + meaningful
   `alt` text. No hotlinking copyrighted stock. Real photos drop into the same slots.
+- **One dish, one accurate image (client rule, 2026-08-06).** Every product image must
+  depict *that exact item* with matching toppings. **Never reuse another dish's photo as a
+  stand-in** — that is what put loaded messy fries on Fries, Potato Wedges and Onion Rings,
+  and one generic salad on all six salads. If no topping-accurate image exists, leave the
+  slot empty (`NO_PHOTO` / no category fallback in `src/lib/photos.ts`) so `DishImage`
+  renders the branded placeholder, and add the item to the GAPS list in `IMAGE-MANIFEST.md`.
+  Categories whose items differ by ingredient (`salads`, `sides`, `desserts`) therefore have
+  **no** `ITEM_CATEGORY_PHOTO` fallback — do not add one back.
+- **Verify new images by opening them, never by filename.** Filenames are a hint only. Every
+  image mapped into `ITEM_PHOTO` must be viewed and checked against that item's description in
+  `src/data/menu.ts` first — that is how the onion-on-butter-chicken and chicken-on-paneer
+  defects were caught. Also check for generator watermarks before shipping.
 - **Accessibility**: semantic HTML, alt text, visible focus states, WCAG AA contrast.
 - **Styling**: Tailwind utility classes + tokens; no inline hex — use token classes
   (`bg-maroon`, `text-orange`, etc.) defined in `tailwind.config.ts`.
@@ -284,8 +327,8 @@ Existing `/`, `/menu`, `/deals`, `/chicken-wings-woodstock`,
    cream; locally owned).
 6. **Menu highlights + price `<table>`** — 4–8 relevant items with prices; link to `/menu`.
 7. **How to order (HowTo)** — numbered steps, marked up with **HowTo JSON-LD**.
-8. **Delivery / hours facts** — address, hours per day, 3 km radius, $25 minimum,
-   phone. Identical to NAP everywhere.
+8. **Delivery / hours facts** — address, hours per day, that delivery is available in
+   Woodstock, phone. Identical to NAP everywhere. **No radius or order minimum** — see §2.
 9. **FAQ (AEO + GEO core)** — 5–8 voice-style question headings; each answer self-contained
    1–3 sentences. Marked up with **FAQPage JSON-LD**.
 10. **Internal links** — to the other cluster pages + `/menu` + `/deals`, descriptive anchors.
@@ -314,7 +357,7 @@ lists for steps · FAQPage + HowTo schema · concise, definition-first, scannabl
 
 ### GEO checklist
 State the brand as a clear entity in paragraph 1 of every page · always "Noni's Pizza &
-Wings" (never variants) · specific verifiable facts (hours, 3 km radius, $25 threshold, named
+Wings" (never variants) · specific verifiable facts (hours, delivery/pickup/dine-in, named
 signature dishes, "never pre-cooked") · visible "Last updated" stamp · comparison tables &
 factual lists LLMs can extract · structured data mirrors visible content · no vague fluff.
 

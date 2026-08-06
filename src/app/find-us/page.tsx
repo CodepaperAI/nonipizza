@@ -12,7 +12,7 @@ import { everydaySpecials } from "@/data/deals";
 export const metadata = buildMetadata({
   title: "Find Us in Woodstock, ON | Noni's Pizza & Wings",
   description:
-    "Noni's Pizza & Wings — 300 Main St, Unit 8, Woodstock, ON N4S 1T3. Hours, phone, map, directions and delivery area. Open late Fri–Sat until 2 AM.",
+    "Noni's Pizza & Wings — 300 Main St, Unit 8, Woodstock, ON N4S 1T3. Hours, phone, map, directions and delivery. Open 11 AM–9 PM Sun–Thu, 11 AM–11 PM Fri–Sat.",
   path: "/find-us",
 });
 
@@ -27,11 +27,11 @@ const faqs = [
   },
   {
     q: "What are your hours?",
-    a: "Mon–Thu & Sun 11:00 AM–11:00 PM; Fri–Sat 11:00 AM–2:00 AM.",
+    a: "Sun–Thu 11:00 AM–9:00 PM; Fri–Sat 11:00 AM–11:00 PM.",
   },
   {
     q: "What's your delivery area?",
-    a: `Delivery within ${primaryLocation.delivery.radiusKm} km on orders $${primaryLocation.delivery.minSubtotal}+. We also offer pickup and dine-in.`,
+    a: "We deliver across Woodstock, ON from 300 Main St, Unit 8. Pickup and dine-in are also available.",
   },
   {
     q: "How can I reach you?",
@@ -55,7 +55,7 @@ export default function Page() {
       <PageHero
         eyebrow="Find Us"
         title="Find Noni's in Woodstock"
-        lead="Come say hi. We're on Main Street in Woodstock, open late every night — dine in, pick up, or get it delivered to your door."
+        lead="Come say hi. We're on Main Street in Woodstock — open 11 AM to 9 PM Sunday to Thursday and 11 AM to 11 PM Friday and Saturday. Dine in, pick up, or get it delivered to your door."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Find Us", path: "/find-us" },

@@ -22,8 +22,7 @@ export function PromoStrip() {
             Happy Hour, 2–5 PM daily
           </h2>
           <p className="mt-2 max-w-lg text-maroon/80">
-            10% off orders $25+ every afternoon. Plus seniors save 10% Mon–Thu &
-            delivery within 3 km.
+            10% off orders $25+ every afternoon. Plus seniors save 10% Mon–Thu.
           </p>
         </div>
         <Button href={siteConfig.orderUrl} external variant="filledMaroon" size="lg">

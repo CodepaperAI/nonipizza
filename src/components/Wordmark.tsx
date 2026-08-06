@@ -1,7 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 
 /**
- * "NONI'S PIZZA & WINGS" wordmark with an orange circular "N" (DESIGN.md). Two sizes:
+ * "NONI'S PIZZA & WINGS" wordmark, led by Noni's real tomato "N" mark (DESIGN.md).
+ * The supplied mark is red on a white field, so it sits inside a white circle — placing
+ * it straight onto the maroon bar would not clear WCAG AA contrast. Two sizes:
  * `nav` (in the nav bar) and `giant` (footer full-width).
  */
 export function Wordmark({
@@ -13,13 +16,11 @@ export function Wordmark({
   size?: "nav" | "giant";
   className?: string;
   href?: string;
-  /** Show the text wordmark next to the circle N. */
+  /** Show the text wordmark next to the mark. */
   label?: boolean;
 }) {
   const circle =
-    size === "giant"
-      ? "h-[0.9em] w-[0.9em] text-[0.6em]"
-      : "h-8 w-8 text-lg";
+    size === "giant" ? "h-[0.9em] w-[0.9em]" : "h-8 w-8";
   const text =
     size === "giant"
       ? "text-display-hero"
@@ -31,9 +32,15 @@ export function Wordmark({
     >
       <span
         aria-hidden="true"
-        className={`inline-flex shrink-0 items-center justify-center rounded-full bg-orange font-display text-white ${circle}`}
+        className={`relative inline-block shrink-0 overflow-hidden rounded-full bg-white ${circle}`}
       >
-        N
+        <Image
+          src="/images/nonis-mark.png"
+          alt=""
+          fill
+          sizes="64px"
+          className="object-cover"
+        />
       </span>
       {label && (
         <span className="whitespace-nowrap">

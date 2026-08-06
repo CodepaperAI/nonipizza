@@ -19,8 +19,8 @@ export function FactsBlock({
     ...primaryLocation.hours.map(
       (h) => [h.days.length > 3 ? "Sun–Thu" : "Fri–Sat", h.label.split(": ")[1]] as [string, string]
     ),
-    ["Delivery radius", `${primaryLocation.delivery.radiusKm} km ($${primaryLocation.delivery.minSubtotal} minimum)`],
     ["Order options", "Online ordering, pickup, delivery, dine-in"],
+    ["Delivery area", "Woodstock, ON"],
     ["Cuisine", "Pizza, chicken wings, Indian fusion"],
     ["Price range", "$$"],
   ];

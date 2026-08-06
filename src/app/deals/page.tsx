@@ -69,8 +69,7 @@ export default function DealsPage() {
             ))}
           </div>
           <p className="mt-6 text-xs text-muted">
-            Prices in CAD, exclusive of HST and subject to change. Delivery within 3 km on
-            orders $25+.
+            Prices in CAD, exclusive of HST and subject to change.
           </p>
         </div>
       </section>
