@@ -9,16 +9,16 @@ import { breadcrumbJsonLd, faqJsonLd } from "@/lib/jsonld";
 import { getItemsByCategory, wingSauces } from "@/data/menu";
 
 export const metadata = buildMetadata({
-  title: "Chicken Wings in Woodstock, ON | Baked & Crispy | Noni's",
+  title: "Baked Chicken Wings in Woodstock, ON | Noni's Pizza & Wings",
   description:
-    "Baked and deep-fried chicken wings in Woodstock, ON — 9 sauces, boneless or breaded, 1 to 4 lbs. Baked wings are a healthier option. Order online for pickup or delivery.",
+    "Baked chicken wings in Woodstock, ON — never fried. 9 sauces, breaded or boneless, 1 to 4 lbs. A lighter way to do wings. Order online for pickup.",
   path: "/chicken-wings-woodstock",
 });
 
 const faqs = [
   {
     q: "What makes Noni's baked wings different?",
-    a: "Our signature wings can be baked instead of deep-fried — a lighter, healthier option that still comes out juicy and full of flavour, tossed in your choice of nine sauces.",
+    a: "Every wing at Noni's is baked, never fried — a lighter, healthier option that still comes out juicy and full of flavour, tossed in your choice of nine sauces.",
   },
   {
     q: "What wing sauces do you have?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "What sizes do wings come in?",
-    a: "1 LB, 2 LB, 3 LB and 4 LB — great for one person or a whole party. Choose baked, deep-fried breaded, or boneless.",
+    a: "1 LB, 2 LB, 3 LB and 4 LB — great for one person or a whole party. Choose classic baked wings, breaded, or boneless.",
   },
   {
     q: "Can I get wings with pizza as a combo?",
@@ -48,8 +48,8 @@ export default function Page() {
       />
       <PageHero
         eyebrow="Wings"
-        title="Chicken Wings in Woodstock"
-        lead="Looking for chicken wings in Woodstock? Noni's does them baked or crispy, in nine sauces, from 1 to 4 pounds. Our baked wings are a lighter, healthier take that never skimps on flavour."
+        title="Baked Chicken Wings in Woodstock"
+        lead="Looking for chicken wings in Woodstock? Noni's wings are baked, never fried — in nine sauces, from 1 to 4 pounds, classic, breaded or boneless. A lighter, healthier take that never skimps on flavour."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Chicken Wings", path: "/chicken-wings-woodstock" },
@@ -61,8 +61,8 @@ export default function Page() {
           {
             heading: "Baked wings — a healthier way to wing it",
             body: [
-              "Most wings are dropped straight into the fryer. Ours can be baked instead — so you get all the juicy, saucy satisfaction with less grease. It's the same crave-worthy wing, made a little lighter.",
-              "Prefer classic crunch? Go deep-fried breaded, or pick boneless for all sauce and no bones.",
+              "Most wings are dropped straight into the fryer. Ours are baked instead — so you get all the juicy, saucy satisfaction with less grease. It's the same crave-worthy wing, made a little lighter.",
+              "Prefer extra crunch? Go breaded, or pick boneless for all sauce and no bones. Whichever you choose, it comes out of the oven, not the fryer.",
             ],
           },
           {
@@ -77,7 +77,7 @@ export default function Page() {
 
       <ProductGrid
         heading="Signature chicken wings"
-        intro="Baked, deep-fried breaded or boneless — all tossed in your choice of 9 sauces."
+        intro="Classic, breaded or boneless — all baked, all tossed in your choice of 9 sauces."
         items={getItemsByCategory("wings")}
       />
 

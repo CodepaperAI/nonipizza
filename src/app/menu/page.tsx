@@ -167,7 +167,7 @@ export default function MenuPage() {
             Order Now →
           </Button>
           <Link href="/deals" className="self-center underline hover:text-orange">
-            See deals & coupons
+            See everyday deals
           </Link>
         </div>
         <p className="mt-6 text-xs text-muted">

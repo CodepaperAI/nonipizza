@@ -62,7 +62,7 @@ export function restaurantJsonLd() {
         "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet",
       ],
     },
-    sameAs: [siteConfig.socials.instagram, siteConfig.socials.facebook],
+    sameAs: Object.values(siteConfig.socials),
   };
 }
 

@@ -35,11 +35,6 @@ export function DealCard({ deal }: { deal: Deal }) {
             Save ${deal.save}
           </span>
         )}
-        {deal.code && (
-          <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-label font-bold uppercase text-maroon">
-            Code {deal.code}
-          </span>
-        )}
       </div>
       <div className="flex flex-1 flex-col p-6">
         {deal.blurb && (
@@ -57,7 +52,7 @@ export function DealCard({ deal }: { deal: Deal }) {
           </ul>
         )}
         <div className="mt-auto flex items-end justify-between gap-3 pt-5">
-          {deal.prices.length > 0 ? (
+          {deal.prices.length > 0 && (
             <p className={`font-display text-4xl leading-none ${priceColor}`}>
               {from && <span className="mr-1 align-top text-sm opacity-70">from</span>}
               {price(Math.min(...deal.prices.map((p) => p.price)))}
@@ -67,8 +62,6 @@ export function DealCard({ deal }: { deal: Deal }) {
                 </span>
               )}
             </p>
-          ) : (
-            <p className={`font-display text-2xl leading-none ${priceColor}`}>Coupon deal</p>
           )}
           <Button href={siteConfig.orderUrl} external variant="filledMaroon" size="sm" ariaLabel={`Grab deal: ${deal.name}`}>
             Grab Deal

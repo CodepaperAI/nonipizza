@@ -57,8 +57,8 @@ const faqs = [
     a: "Yes — add baked wings, panzerotti, sides, drinks and Kawartha ice cream to the same order and check out in one go.",
   },
   {
-    q: "Do you take coupon codes online?",
-    a: "Yes. Enter your coupon code at checkout to apply a deal — see our deals page for current codes.",
+    q: "Do you have combo deals available online?",
+    a: "Yes — browse our everyday combo deals on the deals page and select your options during online ordering.",
   },
 ];
 

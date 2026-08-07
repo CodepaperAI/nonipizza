@@ -1,5 +1,5 @@
 /**
- * Deals — everyday deals + coupon deals (with codes). Rendered on /deals and the homepage
+ * Deals — everyday combo deals. Rendered on /deals and the homepage
  * "COMBOS THAT MAKE SENSE" section. Accent colors rotate per DESIGN.md.
  */
 
@@ -23,8 +23,6 @@ export interface Deal {
   wasPrice?: number;
   /** Optional "SAVE $X" amount for the pill. */
   save?: number;
-  /** Coupon code, if this is a coupon deal. */
-  code?: string;
   accent: Accent;
   image: string;
   /** Surface in homepage deals section. */
@@ -37,7 +35,8 @@ export const everydayDeals: Deal[] = [
     id: "deal-1-pickup",
     name: "Pickup / Walk-in Special",
     blurb: "Deal 1",
-    includes: ["1 pizza with 1 topping", "1 dipping free"],
+    // "1 dipping" — the dip is part of the deal, but never call it free (client, Aug 2026).
+    includes: ["1 pizza with 1 topping", "1 dipping"],
     prices: [
       { label: "Small", price: 8.99 },
       { label: "Medium", price: 10.99 },
@@ -135,39 +134,6 @@ export const everydayDeals: Deal[] = [
   },
 ];
 
-/** Coupon deals (each has a code). */
-export const couponDeals: Deal[] = [
-  {
-    id: "coupon-family-feast-10off",
-    name: "10% off Pizza Family Feast",
-    includes: ["10% off the Family Feast Deal"],
-    prices: [],
-    code: "050425",
-    accent: "red",
-    image: "/images/coupon-family-feast.svg",
-  },
-  {
-    id: "coupon-double-deal",
-    name: "Noni's Pizza Double Deal",
-    includes: ["2 medium pizzas", "2 toppings each"],
-    prices: [{ label: "", price: 20.99 }],
-    code: "060425",
-    accent: "sky",
-    image: "/images/coupon-double-deal.svg",
-    featured: true,
-  },
-  {
-    id: "coupon-messy-fries",
-    name: "New Messy Fries with Chicken",
-    includes: ["Messy fries topped with chicken"],
-    prices: [{ label: "", price: 11.99 }],
-    code: "070425",
-    accent: "yellow",
-    image: "/images/coupon-messy-fries.svg",
-    featured: true,
-  },
-];
-
 /** Standing everyday specials (banner / find-us copy). */
 export const everydaySpecials = [
   "Seniors save 10% Mon–Thu",
@@ -175,4 +141,5 @@ export const everydaySpecials = [
 ];
 
 export const featuredDeals = (): Deal[] =>
-  [...couponDeals, ...everydayDeals].filter((d) => d.featured);
+  everydayDeals.filter((d) => d.featured);
+

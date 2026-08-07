@@ -199,9 +199,6 @@ const DEAL_PHOTO: Record<string, string> = {
   "deal-4b-pizza-wings": `${P}/deal-combo-2lb.jpg`,
   "deal-4c-pizza-wings": `${P}/deal-combo-double-1lb.jpg`,
   "deal-4d-pizza-wings": `${P}/deal-combo-double-2lb.jpg`,
-  "coupon-family-feast-10off": `${P}/deal-family-feast.jpg`,
-  "coupon-double-deal": `${P}/deal-double-pizza.jpg`,
-  "coupon-messy-fries": `${P}/side-messy-fries.jpg`,
 };
 
 export function dealPhoto(deal: Deal): string {

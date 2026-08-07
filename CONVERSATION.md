@@ -5,6 +5,54 @@
 
 ---
 
+## Entry 16 — Uplift AI remote image support & next.config update — 2026-08-07
+
+- **Remote image configuration**: Updated `next.config.mjs` with `remotePatterns` for all HTTPS image hosts so blog featured images from Uplift AI's CDN/S3 load directly.
+- **Direct Uplift AI image rendering**: Removed website fallback image paths from `/blog` and `/blog/[slug]`. Posts now render their `featuredImage` directly from Uplift AI's API response with `unoptimized` prop.
+- **Live verification**: Successfully built with `.env.local` token, fetching live post `/blog/best-pizza-in-woodstock` directly from Uplift AI. Build clean (22 static routes).
+
+---
+
+## Entry 15 — Environment variables template & Uplift AI direct integration — 2026-08-07
+
+- **Removed dummy blog data**: `src/lib/blog.ts` now fetches exclusively from Uplift AI API (`UPLIFTAI_BLOG_TOKEN`). Added clean empty state UI to `/blog` when no posts are published yet.
+- **Updated `.env.example`**: Configured template with `UPLIFTAI_BLOG_TOKEN`, `RESEND_API_KEY`, `RESEND_TO_EMAIL`, and `RESEND_FROM_EMAIL`.
+- **Verification**: `npm run build` passed clean (21 routes compiled).
+
+- **Footer updates**: Removed Facebook link; updated Instagram URL to `https://www.instagram.com/nonispizzanwings?igsh=MThrenBpcGZheG9haA==`; added **Blog** link under Quick Links.
+- **Send a Query section**: Removed old newsletter subscribe box. Added interactive `SendQueryForm` component and `/api/query` route powered by Resend (`process.env.RESEND_API_KEY`), with graceful logging when key is pending.
+- **Uplift AI Blog pages**: Built `/blog` listing page and `/blog/[slug]` detail route matching the site theme. Integrated with Uplift AI API endpoints (`UPLIFTAI_BLOG_TOKEN`), with high-quality fallback articles for offline/pending token states.
+- **SEO & Build**: Added `/blog` to `sitemap.ts` and `BlogPosting` JSON-LD schema. `npm run build` passed clean (25 routes).
+
+---
+
+## Entry 13 — Client review round 3: salad sizes, dips, coupon removal — 2026-08-07
+
+- **Salad size labels updated**: All 6 salads relabeled from Small/Large → **Medium / Large** in `menu.ts` (prices unchanged: Caesar/Greek/Garden M $8.99/L $10.99, Julienne M $9.99/L $11.99, Chicken & Chicken Caesar M $10.99/L $12.99).
+- **Dipping sauces**: Added plain **Creamy Garlic** ($1.49) back as its own item alongside **Homemade Creamy Garlic** ($1.49, "Made fresh in house daily.").
+- **Coupon codes & code-based deals removed completely**: Removed `couponDeals` section, code badges, and all "coupon code"/"use these codes" text across `/deals`, homepage, header/footer, FAQs, and `cluster.ts`. Everyday code-free deals remain.
+- **Verification**: `npm run build` passed cleanly (19 static routes); zero `CODE `, `coupon code`, or `use these codes` strings in built `.next` HTML.
+- **Still pending**: "Change price to 3.99" item awaiting client clarification on target item.
+
+---
+
+## Entry 12 — Client review round 2: wings, dips, prices — 2026-08-07
+
+- **Wings are baked-only.** "Deep-Fried Baked Wings" → **Baked Wings**, "Deep-Fried Breaded
+  Wings" → **Breaded Wings**; Boneless unchanged. Stripped every fried reference from the
+  category teaser, `/chicken-wings-woodstock` (H1, lead, 2 FAQs, meta, body, grid intro) and
+  the WhyNoni bullet. "Baked, never fried" added once on the item + once in the lead.
+  *Panzerotti keeps "baked or deep-fried" — genuinely offered both ways, out of scope.*
+- **Party Pizza**: descriptions now end "— 1 topping." / "— 4 toppings."; dropped the
+  "2 dippings free" chip too. Prices unchanged ($26.99 / $32.99).
+- **Free-dipping scrub**: Deal 1 "1 dipping free" → "1 dipping" (dip still in the combo,
+  just not billed as free). Combo "3 pops or dips" left alone.
+- **Gluten-free upcharge removed** from both places it lived — the Create-Your-Own
+  description and `createYourOwnOptions.crusts` → "Gluten-Free (Medium only)".
+- Fried Pickle Spears → **5 pcs $7.99 / 10 pcs $13.99**. Creamy Garlic → **Homemade Creamy
+  Garlic**, "Made fresh in house daily." Kawartha **1 Scoop $3.49**, **2 Scoop $6.49**.
+- **Not applied — awaiting confirmation:** "change price to 3.99" (ambiguous target). Build passes.
+
 ## Entry 11 — Image gap-fill: every menu item now has its own photo — 2026-08-06
 
 - Client supplied 34 generated renders in `nonipizza_photos/`, one per placeholder slot.

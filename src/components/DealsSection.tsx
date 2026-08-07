@@ -27,7 +27,7 @@ export function DealsSection() {
 
         <div className="mt-10 flex justify-center">
           <Button href="/deals" variant="filledMaroon" size="lg">
-            See all deals & coupons →
+            See all deals →
           </Button>
         </div>
       </div>

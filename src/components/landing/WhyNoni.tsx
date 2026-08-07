@@ -6,7 +6,7 @@
 const DEFAULT_FACTS = [
   "Freshly prepared, never pre-cooked — every order is made just for you.",
   "Famous for Indian-fusion pizzas: butter chicken, tandoori paneer & spicy chicken.",
-  "Baked chicken wings — a lighter option than deep-fried, in 9 sauces.",
+  "Baked chicken wings — never fried, a lighter option, in 9 sauces.",
   "Custom pizza & handcrafted panzerotti, with gluten-free crust available.",
   "Kawartha ice cream in 11 flavours for dessert.",
   "Locally owned in Woodstock, Ontario — proud to serve the community.",

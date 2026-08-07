@@ -26,7 +26,7 @@ export function siblingLinks(currentPath: string): ClusterPage[] {
   return [
     ...clusterPages.filter((p) => p.path !== currentPath),
     { path: "/menu", anchor: "the full Noni's menu" },
-    { path: "/deals", anchor: "pizza deals & coupons in Woodstock" },
+    { path: "/deals", anchor: "pizza deals in Woodstock" },
   ];
 }
 

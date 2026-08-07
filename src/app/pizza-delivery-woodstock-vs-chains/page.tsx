@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: "Is local pizza more expensive than the chains?",
-    a: "Not necessarily. Noni's build-your-own pizzas start at $8.99 (small) and specialty pizzas from $14.99, with combo deals and coupon codes that keep it competitive.",
+    a: "Not necessarily. Noni's build-your-own pizzas start at $8.99 (small) and specialty pizzas from $14.99, with combo deals that keep it competitive.",
   },
   {
     q: "Do local pizza places deliver as fast as chains?",

@@ -19,8 +19,7 @@ export const siteConfig = {
   priceRange: "$$",
   cuisines: ["Pizza", "Chicken Wings", "Indian"],
   socials: {
-    instagram: "https://www.instagram.com/",
-    facebook: "https://www.facebook.com/",
+    instagram: "https://www.instagram.com/nonispizzanwings?igsh=MThrenBpcGZheG9haA==",
   },
   location: primaryLocation,
 } as const;

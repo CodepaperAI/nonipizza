@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { Wordmark } from "./Wordmark";
 import { Button } from "./ui/Button";
+import { SendQueryForm } from "./SendQueryForm";
 import { siteConfig } from "@/lib/site";
 import { primaryLocation, formattedAddress } from "@/data/locations";
 
 const quickLinks = [
   { label: "Menu", href: "/menu" },
   { label: "Deals", href: "/deals" },
+  { label: "Blog", href: "/blog" },
   { label: "Find Us", href: "/find-us" },
   { label: "Reviews", href: "/reviews" },
   { label: "Pizza Near Me", href: "/pizza-near-me-woodstock" },
@@ -66,40 +68,9 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Newsletter */}
+          {/* Send a query */}
           <div>
-            <h2 className="text-display-lg uppercase leading-none">
-              Never Miss a<br />
-              <span className="text-orange">Deal</span> Again
-            </h2>
-            <p className="mt-3 text-sm text-cream/80">
-              Get Noni&apos;s specials, new menu drops & coupon codes straight to
-              your inbox.
-            </p>
-            <form
-              className="mt-4 flex flex-col gap-2 sm:flex-row"
-              action={siteConfig.orderUrl}
-              method="get"
-            >
-              <label htmlFor="newsletter-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="newsletter-email"
-                type="email"
-                name="email"
-                required
-                placeholder="you@email.com"
-                className="w-full rounded-full bg-cream px-5 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange"
-              />
-              <button
-                type="submit"
-                className="rounded-full bg-orange px-6 py-3 text-sm font-bold uppercase text-white transition hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream"
-              >
-                Subscribe
-              </button>
-            </form>
-            <p className="mt-2 text-xs text-cream/60">No spam, ever.</p>
+            <SendQueryForm />
           </div>
 
           {/* Map + come say hi */}
@@ -136,9 +107,6 @@ export function Footer() {
             <div className="mt-3 flex gap-3 text-sm">
               <a href={siteConfig.socials.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-orange">
                 Instagram
-              </a>
-              <a href={siteConfig.socials.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-orange">
-                Facebook
               </a>
             </div>
           </div>

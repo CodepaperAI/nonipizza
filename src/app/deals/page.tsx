@@ -4,12 +4,12 @@ import { OrderCTA } from "@/components/OrderCTA";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata } from "@/lib/seo";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
-import { couponDeals, everydayDeals, everydaySpecials } from "@/data/deals";
+import { everydayDeals, everydaySpecials } from "@/data/deals";
 
 export const metadata = buildMetadata({
-  title: "Pizza Deals & Coupons in Woodstock | Noni's",
+  title: "Pizza Deals & Combos in Woodstock | Noni's",
   description:
-    "Save on pizza, wings & combos in Woodstock. Everyday combo deals, family feasts and coupon codes from Noni's Pizza & Wings. Order online for pickup or delivery.",
+    "Save on pizza, wings & combos in Woodstock. Everyday combo deals and family feasts from Noni's Pizza & Wings. Order online for pickup or delivery.",
   path: "/deals",
 });
 
@@ -24,8 +24,8 @@ export default function DealsPage() {
       />
       <PageHero
         eyebrow="Deals"
-        title="Deals & Coupons in Woodstock"
-        lead="Stack your favorites and save big. Everyday combo deals plus coupon codes on pizza, wings and family feasts — freshly made to order and ready for pickup or delivery."
+        title="Everyday Pizza Deals in Woodstock"
+        lead="Stack your favorites and save big. Everyday combo deals on pizza, wings and family feasts — freshly made to order and ready for pickup or delivery."
         breadcrumb={[
           { name: "Home", path: "/" },
           { name: "Deals", path: "/deals" },
@@ -43,23 +43,8 @@ export default function DealsPage() {
         </div>
       </section>
 
-      {/* Coupon deals */}
+      {/* Everyday combo deals */}
       <section className="bg-cream py-16 sm:py-20">
-        <div className="mx-auto max-w-container px-5 sm:px-8">
-          <h2 className="font-display uppercase text-display-lg text-maroon">Coupon Deals</h2>
-          <p className="mt-2 text-muted">
-            Use these codes at checkout. One coupon per order unless stated otherwise.
-          </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            {couponDeals.map((deal) => (
-              <DealCard key={deal.id} deal={deal} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Everyday deals */}
-      <section className="bg-cream pb-16 sm:pb-20">
         <div className="mx-auto max-w-container px-5 sm:px-8">
           <h2 className="font-display uppercase text-display-lg text-maroon">Everyday Combo Deals</h2>
           <p className="mt-2 text-muted">Standing deals — no code needed.</p>
@@ -74,7 +59,7 @@ export default function DealsPage() {
         </div>
       </section>
 
-      <OrderCTA heading="Grab a deal tonight" sub="Order online and apply your coupon at checkout." />
+      <OrderCTA heading="Grab a deal tonight" sub="Order online for pickup or delivery." />
     </>
   );
 }

@@ -20,7 +20,7 @@ export const DEFAULT_ORDER_STEPS = [
   },
   {
     name: "Check out",
-    text: "Enter your details, apply any coupon code and place your order. We start making it fresh right away.",
+    text: "Enter your details and place your order. We start making it fresh right away.",
   },
 ];
 

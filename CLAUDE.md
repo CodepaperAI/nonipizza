@@ -65,6 +65,19 @@ published** anywhere on the site — see the discontinued note below.
 >   menu tag or landing page may show that perk.
 > - **"4 toppings"** is off the *Create Your Own* pizza — it is now just "toppings". (The
 >   4-topping counts on Signature pizzas, panzerotti and combo deals are unchanged.)
+> - **"Deep-fried" wings.** Wings at Noni's are **baked, never fried** — that is the brand's
+>   healthier-wings point. The items are **Baked Wings**, **Breaded Wings** and **Boneless
+>   Wings**; the old "Deep-Fried Baked/Breaded Wings" names were self-contradictory and are
+>   gone. *Panzerotti* is genuinely offered baked **or** deep-fried — that one stays.
+> - **All "free dipping" wording**, everywhere: no "2 dippings free" on Party Pizza, no
+>   "1 dipping free" on Deal 1. A dip may still be listed as *part* of a combo ("1 dipping",
+>   "3 pops or dips") — just never described as free.
+> - **The gluten-free crust upcharge** (+$2.49). Gluten-free is still an option (Medium only)
+>   but carries **no published price difference**. Do not re-add one.
+> - **ALL code-based coupon deals** (CODE 010425, 020425, 030425, 040425, 050425, 060425, 070425).
+>   Removed completely per client request because coupons are not on their POS. Only everyday
+>   code-free deals remain.
+> - **Small salad size label.** All six salads are now relabeled Medium / Large (not Small / Large).
 
 **Positioning:** Locally owned, proud to serve the Canadian community. Known for
 **Indian-fusion pizzas** (butter chicken, tandoori paneer, spicy chicken/paneer),
@@ -118,6 +131,8 @@ exclusive of HST, subject to change.
   web-only — no native app, so there are no App Store / Play Store links.)
 - `NEXT_PUBLIC_SITE_URL` — canonical site origin (default `https://www.nonispizza.ca`),
   used for canonical URLs, Open Graph, and the sitemap.
+- `RESEND_API_KEY` — API key for Resend email service (used by `/api/query` for Send a Query form).
+- `UPLIFTAI_BLOG_TOKEN` (or `NEXT_PUBLIC_UPLIFTAI_BLOG_TOKEN`) — API token for Uplift AI blog integration.
 
 ---
 
@@ -207,19 +222,20 @@ exclusive of HST, subject to change.
 
 Full menu is encoded in `src/data/menu.ts` as typed objects. Categories:
 
-- **Salads** (S/L)
+- **Salads** (Medium / Large)
 - **Pizzas** — Specialty (3 topping), Signature (4 topping), Indian Fusion,
   Veggie Fans, Create Your Own, Hip Hip Hooray Party Pizza
 - **Everyday Deals** (Deal 1–4)
 - **Panzerotti**
-- **Chicken Wings** (baked / deep-fried breaded / boneless, 1–4 LB, 9 sauces)
+- **Chicken Wings** — **always baked, never fried** (classic / breaded / boneless, 1–4 LB,
+  9 sauces). Never name or describe a wing as "deep-fried" (see §2 discontinued list).
 - **Side Orders**
 - **Dipping Sauces**
 - **Desserts**
 - **Kawartha Ice Cream**
 - **Drinks**
 
-Coupon deals live in `src/data/deals.ts` (each has a code, e.g. `010425`).
+Everyday combo deals live in `src/data/deals.ts`. (Code-based coupon deals were removed in Round 3).
 Prices are CAD, exclusive of HST. Pizza sizes: Small 10" / Medium 12" / Large 14" /
 X-Large 16" unless noted. **Menu data is the canonical source** — page copy must match it.
 
