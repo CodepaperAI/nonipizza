@@ -5,6 +5,17 @@
 
 ---
 
+## Entry 17 — Scroll-aware navbar visibility (client feedback) — 2026-08-07
+
+- **Client:** the fixed navbar washed out and was hard to see when scrolling down over the
+  bright cream menu content. `NavBar.tsx` now tracks a `scrolled` state (scroll listener) and
+  swaps the translucent `bg-maroon/95 backdrop-blur` pill for a **solid `bg-maroon` bar with
+  `shadow-2xl` + `ring-cream/25`** once past 8px. At the very top (over the dark hero) the
+  lighter translucent look is kept, so contrast is high in both places. `transition-all` keeps
+  the swap smooth. No errors in dev; console clean.
+
+---
+
 ## Entry 16 — Uplift AI remote image support & next.config update — 2026-08-07
 
 - **Remote image configuration**: Updated `next.config.mjs` with `remotePatterns` for all HTTPS image hosts so blog featured images from Uplift AI's CDN/S3 load directly.

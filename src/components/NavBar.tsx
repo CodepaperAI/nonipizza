@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Wordmark } from "./Wordmark";
 import { Button } from "./ui/Button";
 import { siteConfig } from "@/lib/site";
@@ -15,12 +15,27 @@ const links = [
 
 export function NavBar() {
   const [open, setOpen] = useState(false);
+  // Once the page is scrolled, the pill floats over bright menu content — a translucent,
+  // blurred bar washes out there, so we switch to a solid, high-contrast maroon bar with a
+  // stronger shadow. At the very top (over the dark hero) the lighter look reads fine.
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
       <nav
         aria-label="Primary"
-        className="pointer-events-auto mx-auto flex max-w-container items-center justify-between gap-4 rounded-full bg-maroon/95 px-4 py-3 text-cream shadow-lg ring-1 ring-cream/10 backdrop-blur sm:px-6"
+        className={`pointer-events-auto mx-auto flex max-w-container items-center justify-between gap-4 rounded-full px-4 py-3 text-cream transition-all duration-300 sm:px-6 ${
+          scrolled
+            ? "bg-maroon shadow-2xl ring-1 ring-cream/25"
+            : "bg-maroon/95 shadow-lg ring-1 ring-cream/10 backdrop-blur"
+        }`}
       >
         {/* Left links (desktop) */}
         <ul className="hidden flex-1 items-center gap-5 text-label font-bold uppercase lg:flex">
