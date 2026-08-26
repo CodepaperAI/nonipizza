@@ -1,10 +1,24 @@
 import { NextResponse } from "next/server";
 import { primaryLocation } from "@/data/locations";
+import { getClientIp, verifyTurnstile } from "@/lib/turnstile";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, emailOrPhone, subject, message } = body;
+    const { name, emailOrPhone, subject, message, turnstileToken } = body;
+
+    // Spam check runs first — before validation, logging, or any email is sent.
+    const humanVerified = await verifyTurnstile(
+      typeof turnstileToken === "string" ? turnstileToken : "",
+      getClientIp(request)
+    );
+
+    if (!humanVerified) {
+      return NextResponse.json(
+        { success: false, error: "Verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
 
     if (!name || !emailOrPhone || !message) {
       return NextResponse.json(

@@ -5,6 +5,28 @@
 
 ---
 
+## Entry 18 — Cloudflare Turnstile on the query form — 2026-08-25
+
+- Audited every form on the site: only one submits to a server — `SendQueryForm` (rendered in
+  the footer on every page) → `POST /api/query`. Ordering is an external Mealsy link; the blog
+  is read-only. Nothing else needed protecting.
+- New `src/lib/turnstile.ts` — `verifyTurnstile(token, ip)` posts form-encoded to Cloudflare
+  siteverify; false on missing token / non-200 / `success: false`. Missing `TURNSTILE_SECRET_KEY`
+  throws in production, warns and passes in development so local dev is not blocked.
+- New `src/components/turnstile-widget.tsx` — `"use client"`, explicit render, script injected once
+  via `next/script` (`lazyOnload`), `onVerify/onExpire/onError`, `reset()` via ref. No wrapper package.
+- Form sends `turnstileToken`; submit disabled until a token exists with a visible reason, widget
+  resets after every submit, 65px height reserved so nothing shifts. Route verifies **first**, before
+  validation or Resend, returning 400 "Verification failed. Please try again." Design untouched.
+- `.env.example` gained `NEXT_PUBLIC_TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET_KEY`. Lint, tsc and
+  `npm run build` all pass with both vars absent.
+- Keys added to Vercel (Production + Development; Preview skipped — project has no connected Git
+  repo, so the CLI cannot branch-scope Preview vars). Deployed to production via `vercel --prod`,
+  aliased to www.nonispizza.ca. Live checks: widget container renders, submit gate active, and
+  `/api/query` returns 400 "Verification failed." for both bogus and missing tokens.
+
+---
+
 ## Entry 17 — Scroll-aware navbar visibility (client feedback) — 2026-08-07
 
 - **Client:** the fixed navbar washed out and was hard to see when scrolling down over the

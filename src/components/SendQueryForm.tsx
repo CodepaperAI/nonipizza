@@ -1,6 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import {
+  TurnstileWidget,
+  isTurnstileConfigured,
+  type TurnstileWidgetHandle,
+} from "./turnstile-widget";
 
 export function SendQueryForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -11,6 +16,17 @@ export function SendQueryForm() {
     subject: "General Query",
     message: "",
   });
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<TurnstileWidgetHandle>(null);
+
+  // When no site key is configured (local dev), don't gate the form on a token.
+  const awaitingVerification = isTurnstileConfigured && !turnstileToken;
+
+  const resetChallenge = () => {
+    // Turnstile tokens are single-use — always issue a fresh challenge after a submit.
+    setTurnstileToken("");
+    turnstileRef.current?.reset();
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,10 +37,11 @@ export function SendQueryForm() {
       const res = await fetch("/api/query", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, turnstileToken }),
       });
 
       const data = await res.json();
+      resetChallenge();
 
       if (res.ok && data.success) {
         setStatus("success");
@@ -34,6 +51,7 @@ export function SendQueryForm() {
         setErrorMessage(data.error || "Failed to send message. Please try again or call us.");
       }
     } catch {
+      resetChallenge();
       setStatus("error");
       setErrorMessage("Something went wrong. Please check your network or call us directly.");
     }
@@ -110,13 +128,27 @@ export function SendQueryForm() {
             />
           </div>
 
+          <TurnstileWidget
+            ref={turnstileRef}
+            onVerify={(token) => setTurnstileToken(token)}
+            onExpire={() => setTurnstileToken("")}
+            onError={() => setTurnstileToken("")}
+          />
+
+          {awaitingVerification && (
+            <p id="query-turnstile-hint" className="text-xs text-cream/70">
+              Complete the verification above to send your message.
+            </p>
+          )}
+
           {status === "error" && (
             <p className="text-xs text-red-400 font-semibold">{errorMessage}</p>
           )}
 
           <button
             type="submit"
-            disabled={status === "loading"}
+            disabled={status === "loading" || awaitingVerification}
+            aria-describedby={awaitingVerification ? "query-turnstile-hint" : undefined}
             className="self-start rounded-full bg-orange px-6 py-2.5 text-sm font-bold uppercase text-white transition hover:bg-orange-600 disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cream"
           >
             {status === "loading" ? "Sending..." : "Send Query →"}
