@@ -134,10 +134,32 @@ export const everydayDeals: Deal[] = [
   },
 ];
 
-/** Standing everyday specials (banner / find-us copy). */
-export const everydaySpecials = [
-  "Seniors save 10% Mon–Thu",
-  "Happy Hour 2–5 PM daily (10% off $25+)",
+/** Standing everyday specials (banner / find-us copy / deals page cards). */
+export interface EverydaySpecial {
+  id: string;
+  name: string;
+  /** One-line summary used in strips and lists. */
+  summary: string;
+  /** Extra conditions shown on the deals page card. */
+  terms?: string[];
+  /** Promo code entered at online checkout, if any. */
+  promoCode?: string;
+}
+
+export const everydaySpecials: EverydaySpecial[] = [
+  {
+    id: "happy-hour",
+    name: "Happy Hour",
+    summary: "10% off orders $25+, 1–4 PM Mon–Thu",
+    terms: ["Mon–Thu, 1–4 PM", "Online ordering & pickup only", "Orders $25+"],
+    promoCode: "HappyHour10",
+  },
+  {
+    id: "senior-discount",
+    name: "Senior Discount",
+    summary: "Seniors save 10% Mon–Thu",
+    terms: ["Mon–Thu", "For seniors"],
+  },
 ];
 
 export const featuredDeals = (): Deal[] =>

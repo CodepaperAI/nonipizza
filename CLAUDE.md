@@ -47,9 +47,15 @@ Never vary the formatting below.
 (3 km) and minimum ($25) are kept in `primaryLocation.delivery` as data but are **not
 published** anywhere on the site — see the discontinued note below.
 
-**Everyday specials**
-- Seniors save 10% Mon–Thu
-- Happy Hour 2–5 PM daily (10% off $25+)
+**Everyday specials** *(updated 2026-08-27 — client)*
+- **Happy Hour:** 10% off orders $25+, **1–4 PM, Mon–Thu only**. **Online ordering &
+  pickup only.** Promo code **HappyHour10** at online checkout. (Old "2–5 PM daily"
+  framing is gone — do not re-add.)
+- **Senior Discount:** Seniors save 10% Mon–Thu. Shown as a **separate card/section**
+  from Happy Hour (client request — customers were trying to stack "10% plus senior
+  10%"; the deals page states one discount per order, offers can't be combined).
+- `HappyHour10` is a client-supplied **online-ordering** promo code and is an exception
+  to the "no code-based coupon deals" rule below (that rule was about POS coupons).
 
 > **Discontinued — do NOT re-add (future sessions):**
 > - **Shawarma** (platters, wraps, sandwiches, combos) and the shawarma-based **Family

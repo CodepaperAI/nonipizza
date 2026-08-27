@@ -32,14 +32,43 @@ export default function DealsPage() {
         ]}
       />
 
-      {/* Everyday specials strip */}
+      {/* Everyday specials — one card per offer */}
       <section className="bg-yellow">
-        <div className="mx-auto flex max-w-container flex-col gap-2 px-5 py-6 text-maroon sm:flex-row sm:items-center sm:justify-center sm:gap-8 sm:px-8">
-          {everydaySpecials.map((s) => (
-            <p key={s} className="text-center font-bold">
-              ⚡ {s}
-            </p>
-          ))}
+        <div className="mx-auto max-w-container px-5 py-10 sm:px-8">
+          <h2 className="text-center font-display uppercase text-display-lg text-maroon">
+            Everyday Specials
+          </h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {everydaySpecials.map((s) => (
+              <div
+                key={s.id}
+                className="rounded-2xl bg-cream p-6 text-maroon shadow-sm"
+              >
+                <h3 className="font-display uppercase text-2xl">{s.name}</h3>
+                <p className="mt-1 font-bold">⚡ {s.summary}</p>
+                {s.terms && (
+                  <ul className="mt-3 list-disc pl-5 text-sm text-maroon/80">
+                    {s.terms.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                )}
+                {s.promoCode && (
+                  <p className="mt-3 text-sm">
+                    Use promo code{" "}
+                    <span className="rounded bg-maroon px-2 py-1 font-bold uppercase tracking-wider text-yellow">
+                      {s.promoCode}
+                    </span>{" "}
+                    at online checkout.
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-center text-sm font-bold text-maroon">
+            One discount per order — Happy Hour and the Senior Discount can&apos;t be
+            combined.
+          </p>
         </div>
       </section>
 

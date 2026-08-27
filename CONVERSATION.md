@@ -5,6 +5,21 @@
 
 ---
 
+## Entry 19 — Happy Hour revised + separate Senior Discount — 2026-08-27
+
+- Client (WhatsApp): Happy Hour is now **1–4 PM, Mon–Thu only**, **online ordering &
+  pickup only**, orders $25+, promo code **HappyHour10**; Senior Discount must be a
+  separate section because customers were trying to stack the two 10% discounts.
+- `src/data/deals.ts`: `everydaySpecials` restructured from strings to typed
+  `EverydaySpecial[]` (id, name, summary, terms, promoCode) with the two offers separate.
+- Deals page: yellow strip → "Everyday Specials" section with one card per offer, promo
+  code chip, and a "one discount per order — can't be combined" line.
+- `PromoStrip` (homepage) and find-us "Delivery & specials" copy updated to match.
+- CLAUDE.md §2 updated; HappyHour10 noted as an exception to the no-coupon-codes rule
+  (it's an online-ordering code, not a POS coupon). Verified with `npm run build`.
+
+---
+
 ## Entry 18 — Cloudflare Turnstile on the query form — 2026-08-25
 
 - Audited every form on the site: only one submits to a server — `SendQueryForm` (rendered in

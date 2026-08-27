@@ -100,7 +100,10 @@ export default function Page() {
               <p>{primaryLocation.delivery.note}</p>
               <ul className="mt-2 list-disc pl-5">
                 {everydaySpecials.map((s) => (
-                  <li key={s}>{s}</li>
+                  <li key={s.id}>
+                    {s.name}: {s.summary}
+                    {s.promoCode ? ` (code ${s.promoCode}, online ordering & pickup only)` : ""}
+                  </li>
                 ))}
               </ul>
               <p className="mt-3 text-sm">

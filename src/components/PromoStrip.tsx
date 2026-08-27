@@ -19,10 +19,11 @@ export function PromoStrip() {
         <div>
           <p className="text-label font-bold uppercase tracking-widest">Everyday specials</p>
           <h2 className="mt-2 font-display uppercase text-display-lg leading-none sm:text-4xl">
-            Happy Hour, 2–5 PM daily
+            Happy Hour, 1–4 PM Mon–Thu
           </h2>
           <p className="mt-2 max-w-lg text-maroon/80">
-            10% off orders $25+ every afternoon. Plus seniors save 10% Mon–Thu.
+            10% off orders $25+ with promo code <strong>HappyHour10</strong> — online
+            ordering &amp; pickup only. Plus seniors save 10% Mon–Thu.
           </p>
         </div>
         <Button href={siteConfig.orderUrl} external variant="filledMaroon" size="lg">
