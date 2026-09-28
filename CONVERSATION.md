@@ -42,6 +42,15 @@
 
 ---
 
+## Entry 18 — Google Search Console verification file — 2026-09-28
+
+- Added `public/google739f027cb296026c.html` (single line
+  `google-site-verification: google739f027cb296026c.html`) so Google Search Console's
+  HTML-file verification passes. Next.js serves `public/` at the site root, so it resolves
+  at `https://www.nonispizza.ca/google739f027cb296026c.html` once deployed.
+
+---
+
 ## Entry 17 — Scroll-aware navbar visibility (client feedback) — 2026-08-07
 
 - **Client:** the fixed navbar washed out and was hard to see when scrolling down over the
